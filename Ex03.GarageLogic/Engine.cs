@@ -81,9 +81,9 @@ namespace Ex03.GarageLogic
                     }
                 }
 
-                catch (OutOfRangeException ex)
+                catch (OutOfRangeException exception)
                 {
-                    string errorMessage = string.Format("Error: {0}", ex.Message);
+                    string errorMessage = string.Format("Error: {0}", exception.Message);
                     Console.WriteLine(errorMessage);
                     throw;
                 }

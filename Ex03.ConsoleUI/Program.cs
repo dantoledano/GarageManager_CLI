@@ -8,6 +8,10 @@ namespace Ex03.ConsoleUI
 {
     internal class Program
     {
-        
+        public static void Main(string[] args)
+        {
+            UIManagar garageUI = new UIManagar();
+            garageUI.InitilizeUIManager();
+        }
     }
 }

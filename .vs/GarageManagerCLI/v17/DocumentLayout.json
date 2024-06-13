@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4F938815-4240-49FB-96FF-09A77F8AD408}|GarageManagerCLI\\Ex03.GarageLogic.csproj|c:\\users\\roisolomon\\source\\repos\\garagemanagercli\\garagemanagercli\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F938815-4240-49FB-96FF-09A77F8AD408}|GarageManagerCLI\\Ex03.GarageLogic.csproj|solutionrelative:garagemanagercli\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F938815-4240-49FB-96FF-09A77F8AD408}|GarageManagerCLI\\Ex03.GarageLogic.csproj|c:\\users\\roisolomon\\source\\repos\\garagemanagercli\\garagemanagercli\\garage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F938815-4240-49FB-96FF-09A77F8AD408}|GarageManagerCLI\\Ex03.GarageLogic.csproj|solutionrelative:garagemanagercli\\garage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|c:\\users\\roisolomon\\source\\repos\\garagemanagercli\\ex03.consoleui\\uimanagar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|solutionrelative:ex03.consoleui\\uimanagar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|c:\\users\\roisolomon\\source\\repos\\garagemanagercli\\ex03.consoleui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F938815-4240-49FB-96FF-09A77F8AD408}|GarageManagerCLI\\Ex03.GarageLogic.csproj|c:\\users\\roisolomon\\source\\repos\\garagemanagercli\\garagemanagercli\\outofrangeexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F938815-4240-49FB-96FF-09A77F8AD408}|GarageManagerCLI\\Ex03.GarageLogic.csproj|solutionrelative:garagemanagercli\\outofrangeexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\ex03.consoleui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|solutionrelative:ex03.consoleui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -23,25 +35,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Engine.cs",
+              "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\GarageManagerCLI\\Engine.cs",
+              "RelativeDocumentMoniker": "GarageManagerCLI\\Engine.cs",
+              "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\GarageManagerCLI\\Engine.cs",
+              "RelativeToolTip": "GarageManagerCLI\\Engine.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T12:07:55.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Garage.cs",
+              "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\GarageManagerCLI\\Garage.cs",
+              "RelativeDocumentMoniker": "GarageManagerCLI\\Garage.cs",
+              "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\GarageManagerCLI\\Garage.cs",
+              "RelativeToolTip": "GarageManagerCLI\\Garage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T09:31:08.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OutOfRangeException.cs",
+              "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\GarageManagerCLI\\OutOfRangeException.cs",
+              "RelativeDocumentMoniker": "GarageManagerCLI\\OutOfRangeException.cs",
+              "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\GarageManagerCLI\\OutOfRangeException.cs",
+              "RelativeToolTip": "GarageManagerCLI\\OutOfRangeException.cs",
+              "ViewState": "AQIAABgAAAAAZGZmZmbuvy8AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T07:56:58.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UIManagar.cs",
               "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.ConsoleUI\\UIManagar.cs",
               "RelativeDocumentMoniker": "Ex03.ConsoleUI\\UIManagar.cs",
               "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.ConsoleUI\\UIManagar.cs",
               "RelativeToolTip": "Ex03.ConsoleUI\\UIManagar.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAFAAAA",
+              "ViewState": "AQIAAFoAAAAAODMzM7MfwHcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-09T13:08:23.761Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.ConsoleUI\\Program.cs",
               "RelativeDocumentMoniker": "Ex03.ConsoleUI\\Program.cs",
               "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.ConsoleUI\\Program.cs",
               "RelativeToolTip": "Ex03.ConsoleUI\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-09T10:13:59.201Z",
               "EditorCaption": ""

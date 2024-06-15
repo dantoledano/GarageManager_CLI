@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|c:\\users\\roisolomon\\source\\repos\\garagemanagercli\\ex03.garagelogic\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|c:\\users\\roisolomon\\source\\repos\\garagemanagercli\\ex03.garagelogic\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|c:\\users\\roisolomon\\source\\repos\\garagemanagercli\\ex03.garagelogic\\garage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\garage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\ex03.consoleui\\uimanagar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|c:\\users\\roisolomon\\source\\repos\\garagemanagercli\\ex03.consoleui\\uimanagar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|solutionrelative:ex03.consoleui\\uimanagar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\ex03.consoleui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|solutionrelative:ex03.consoleui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\ex03.garagelogic\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|c:\\users\\roisolomon\\source\\repos\\garagemanagercli\\ex03.garagelogic\\vehicleallocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\vehicleallocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|c:\\users\\roisolomon\\source\\repos\\garagemanagercli\\ex03.garagelogic\\truck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\truck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\ex03.garagelogic\\garage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\garage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\ex03.garagelogic\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\ex03.garagelogic\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,70 +38,96 @@
       "DocumentGroups": [
         {
           "DockedWidth": 174,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Engine.cs",
-              "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Engine.cs",
-              "RelativeDocumentMoniker": "Ex03.GarageLogic\\Engine.cs",
-              "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Engine.cs",
-              "RelativeToolTip": "Ex03.GarageLogic\\Engine.cs",
-              "ViewState": "AQIAAEMAAAAAaGZmZmbiv1UAAABPAAAA",
+              "DocumentIndex": 3,
+              "Title": "Truck.cs",
+              "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Truck.cs",
+              "RelativeDocumentMoniker": "Ex03.GarageLogic\\Truck.cs",
+              "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Truck.cs",
+              "RelativeToolTip": "Ex03.GarageLogic\\Truck.cs",
+              "ViewState": "AQIAADMAAAAALjMzMzMQwAkAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T16:17:23.873Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Vehicle.cs",
-              "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Vehicle.cs",
-              "RelativeDocumentMoniker": "Ex03.GarageLogic\\Vehicle.cs",
-              "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Vehicle.cs",
-              "RelativeToolTip": "Ex03.GarageLogic\\Vehicle.cs",
-              "ViewState": "AQIAAD8AAAAAmpmZmTkxwJcAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T14:35:13.867Z",
+              "WhenOpened": "2024-06-15T15:58:09.646Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "VehicleAllocator.cs",
+              "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\VehicleAllocator.cs",
+              "RelativeDocumentMoniker": "Ex03.GarageLogic\\VehicleAllocator.cs",
+              "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\VehicleAllocator.cs",
+              "RelativeToolTip": "Ex03.GarageLogic\\VehicleAllocator.cs",
+              "ViewState": "AQIAAEQAAAAAaGZmZmYPwGAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T15:58:04.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Car.cs",
+              "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Car.cs",
+              "RelativeDocumentMoniker": "Ex03.GarageLogic\\Car.cs",
+              "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Car.cs",
+              "RelativeToolTip": "Ex03.GarageLogic\\Car.cs",
+              "ViewState": "AQIAACwAAABAmZmZmVkpwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T12:22:54.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Vehicle.cs",
+              "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Vehicle.cs",
+              "RelativeDocumentMoniker": "Ex03.GarageLogic\\Vehicle.cs",
+              "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Vehicle.cs",
+              "RelativeToolTip": "Ex03.GarageLogic\\Vehicle.cs",
+              "ViewState": "AQIAAGAAAACALjMzM3MkwMwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T16:09:52.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Engine.cs",
+              "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Engine.cs",
+              "RelativeDocumentMoniker": "Ex03.GarageLogic\\Engine.cs",
+              "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Engine.cs",
+              "RelativeToolTip": "Ex03.GarageLogic\\Engine.cs",
+              "ViewState": "AQIAACkAAAAANDMzMzMhwJoAAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-13T16:17:23.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Garage.cs",
               "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Garage.cs",
               "RelativeDocumentMoniker": "Ex03.GarageLogic\\Garage.cs",
               "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.GarageLogic\\Garage.cs",
               "RelativeToolTip": "Ex03.GarageLogic\\Garage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "ViewState": "AQIAAE0AAAAAMDMzM7MYwFUAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-13T14:14:28.059Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.ConsoleUI\\Program.cs",
-              "RelativeDocumentMoniker": "Ex03.ConsoleUI\\Program.cs",
-              "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.ConsoleUI\\Program.cs",
-              "RelativeToolTip": "Ex03.ConsoleUI\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T14:14:04.134Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "UIManagar.cs",
               "DocumentMoniker": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.ConsoleUI\\UIManagar.cs",
               "RelativeDocumentMoniker": "Ex03.ConsoleUI\\UIManagar.cs",
               "ToolTip": "C:\\Users\\roisolomon\\source\\repos\\GarageManagerCLI\\Ex03.ConsoleUI\\UIManagar.cs",
               "RelativeToolTip": "Ex03.ConsoleUI\\UIManagar.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAYAAAA",
+              "ViewState": "AQIAABoBAADQmZmZmXk3wDoBAABnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-13T14:13:09.515Z"
+              "WhenOpened": "2024-06-13T14:13:09.515Z",
+              "EditorCaption": ""
             }
           ]
         }

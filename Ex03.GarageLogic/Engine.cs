@@ -64,7 +64,7 @@ namespace Ex03.GarageLogic
 
                     if (i_AmountToFuel < 0)
                     {
-                        throw new OutOfRangeException(0, MaxAmountOfFuel, "Fuel amount cannot be negative");
+                        throw new OutOfRangeException(0, MaxAmountOfFuel, "Fuel Amount Cannot Be Negative");
                     }
 
                     if (m_FuelLeft > MaxAmountOfFuel)
@@ -140,7 +140,7 @@ namespace Ex03.GarageLogic
 
                     if (i_AmountToCharge < 0)
                     {
-                        throw new OutOfRangeException(0, BatteryCapacity, "Charge amount cannot be negative");
+                        throw new OutOfRangeException(0, BatteryCapacity, "Charge Amount Cannot Be Negative");
                     }
 
                     if (m_BatteryTimeLeft > m_BatteryCapacity)
@@ -152,7 +152,7 @@ namespace Ex03.GarageLogic
                         }
                         else
                         {
-                            throw new OutOfRangeException(0, BatteryCapacity, "Maximum charge exceeded !");
+                            throw new OutOfRangeException(0, BatteryCapacity, "Maximum Charge Exceeded !");
                         }
                     }
                 }

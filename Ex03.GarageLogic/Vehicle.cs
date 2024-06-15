@@ -11,14 +11,14 @@ namespace Ex03.GarageLogic
         private string m_ModelName;
         private readonly string r_LicenseNumber;
         private readonly List<Wheel> r_Wheels;
-        private float m_EnergyRemaining;
+        private float m_PercentagePowerLeft;
         private Engine m_Engine;
 
 
         public Vehicle(string i_LicenseNumber, int i_NumberOfWheels,float i_MaxAirPressureForWheel, Engine i_Engine)
         {
 
-            m_EnergyRemaining = 0;
+            m_PercentagePowerLeft = 0;
             m_Engine = i_Engine;
             r_LicenseNumber = i_LicenseNumber;
 
@@ -61,15 +61,15 @@ namespace Ex03.GarageLogic
             }
         }
 
-        public float EnergyRemaining
+        public float PercentagePowerLeft
         {
             get
             {
-                return m_EnergyRemaining;
+                return m_PercentagePowerLeft;
             }
             set
             {
-                m_EnergyRemaining = value;
+                m_PercentagePowerLeft = value;
             }
         }
 
@@ -82,7 +82,47 @@ namespace Ex03.GarageLogic
         }
         /* END - Getters & Setters */
 
-        /* Class Wheel */
+        /* Abstract methods */
+        public abstract List<string> SetVehicleQueriesList();
+        public abstract void SetResponsesForVehicleQueries(List<string> queriesResponses);
+
+        public void SetPowerLevelLeft(float i_PowerLevel)
+        {
+            if(this.Engine is Engine.FuelBasedEngine)
+            {
+                (this.Engine as Engine.FuelBasedEngine).FuelLeft = i_PowerLevel;
+            }
+            else
+            {
+                (this.Engine as Engine.ElectricBasedEngine).BatteryTimeLeft = i_PowerLevel;
+            }
+        }
+
+        public void SetPowerPercentageLeft()
+        {
+            if(this.Engine is Engine.FuelBasedEngine)
+            {
+                this.PercentagePowerLeft = ((this.Engine as Engine.FuelBasedEngine).FuelLeft / (this.Engine as Engine.FuelBasedEngine).MaxAmountOfFuel) *100f;
+            }
+            else
+            {
+
+                this.PercentagePowerLeft = ((this.Engine as Engine.ElectricBasedEngine).BatteryTimeLeft / (this.Engine as Engine.ElectricBasedEngine).BatteryCapacity) * 100f;
+
+            }
+        }
+        public void SetVehicleWheels(string i_ManufactorName, float i_CurrentAirPressure)
+        {
+            foreach (Wheel currentWheel in Wheels)
+            {
+                currentWheel.ManufactorName = i_ManufactorName;
+                currentWheel.RemainingAir = i_CurrentAirPressure;
+            }
+        }
+
+        /* ------------------------------------------------------------ */
+        /* - Class Wheel -  */
+        /* BEGINING */
         public class Wheel
         {
             private readonly float r_MaxAirPressure;
@@ -116,7 +156,7 @@ namespace Ex03.GarageLogic
                     m_RemainingAir = value;
                 }
             }
-            public string ManufactureName
+            public string ManufactorName
             {
                 get
                 {
@@ -162,6 +202,9 @@ namespace Ex03.GarageLogic
 
                 return information.ToString();
             }
+
+            /* END */
+
 
         }
 

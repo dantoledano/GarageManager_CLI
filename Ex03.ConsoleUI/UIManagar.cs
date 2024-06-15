@@ -114,18 +114,18 @@ Enter Your Choice: ");
                     showLicensePlatesInGarage((int)showMenuOfOptionToFilterCarsInGarage(), i_Garage);
                     break;
                 case 3:
-                    //updateStatusOfVehicle()
+                    updateStatusOfVehicle(i_Garage);
                     break;
                 case 4:
-                    // inflateTires();
+                    inflateVehicleTires(i_Garage);
                     break;
                 case 5:
                     Console.WriteLine("Procedding To Fueling Station...\n");
-                    // addPowerToVehicle(i_Garage, Engine.eEngineType.FuelBased);
+                    powerUpVehicle(i_Garage, Engine.eEngineType.Fuel);
                     break;
                 case 6:
                     Console.WriteLine("Procedding To Charing Station...\n");
-                    // addPowerToVehicle(i_Garage, Engine.eEngineType.ElectricBased);
+                    powerUpVehicle(i_Garage, Engine.eEngineType.Battery);
                     break;
                 case 7:
                     displayVehicleInformation(i_Garage);
@@ -352,6 +352,36 @@ Enter Your Choice: ");
                 }
             }
         }
+
+
+        private void inflateVehicleTires(Garage i_Garage)
+        {
+            Console.WriteLine("Inflating Air Pressure To Maximum" + Environment.NewLine);
+            int userChoice = 1;
+
+            while (userChoice == 1)
+            {
+                try
+                {
+                    string licenseNumber = getVehicleLicenseNumberFromUser();
+                    i_Garage.FillWheelsToMaxAirPressureByLicenseNumber(licenseNumber);
+                    userChoice = 2;
+                    Console.WriteLine("Tires Filled Successfully.");
+                    this.displayBackToMenuOption();
+                }
+                catch (ArgumentException exception)
+                {
+                    Console.WriteLine(exception.Message);
+                    userChoice = showBadInputMessageTryAgainAndGetMenu();
+                }
+                catch (OutOfRangeException exception)
+                {
+                    Console.WriteLine(exception.Message);
+                    userChoice = showBadInputMessageTryAgainAndGetMenu();
+                }
+            }
+        }
+
 
         private void showLicensePlatesInGarage(int i_UserFilterChoice, Garage i_Garage)
         {

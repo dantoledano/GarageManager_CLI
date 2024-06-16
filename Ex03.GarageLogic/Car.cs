@@ -12,10 +12,10 @@ namespace Ex03.GarageLogic
     {
         public enum eCarColor
         {
-            Yellow,
-            White,
-            Red,
-            Black
+            Red = 1,
+            White = 2,
+            Black = 3,
+            Yellow = 4
         }
 
         private const int k_CarNumberOfWheels = 5;
@@ -76,7 +76,7 @@ namespace Ex03.GarageLogic
 1. Red
 2. White
 3. Black
-4. Silver
+4. Yellow
 ");
              queriesList.Add("Enter How Many Doors The Car Has: ");
 

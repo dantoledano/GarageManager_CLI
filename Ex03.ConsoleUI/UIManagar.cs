@@ -1,10 +1,9 @@
 ﻿
+using Ex03.GarageLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Ex03.GarageLogic;
 namespace Ex03.ConsoleUI
 {
     public class UIManagar
@@ -15,11 +14,11 @@ namespace Ex03.ConsoleUI
         }
         private void startGarage()
         {
-            bool isGarageOpen = false;
+            bool isGarageOpen = true;
             int userMenuChoice;
             Garage garage = new Garage();
 
-            while (!isGarageOpen)
+            while (isGarageOpen)
             {
                 showMenu();
                userMenuChoice = (int)getAndValidateInputFromUserInRange(1,8);
@@ -30,54 +29,112 @@ namespace Ex03.ConsoleUI
         }
         private void showMenu()
         {
-            Console.Write(@"Pick An Option From The Menu:
+            Console.Clear();
 
-1. Put your vehicle in the garage.
-2. Display all the license plates of vehicles that are in the garage.
-3. Update the status of a vehicle in the garage.
-4. Inflate tires of a chosen vehicle to the maximum capacity.
-5. Fuel a vehicle.
-6. Charge a vehicle.
-7. Show all the information of a vehicle chosen using license plate number
-8. Exit garage.
+            StringBuilder menu = new StringBuilder();
+            string title = "== Garage Menu ==";
+            string border = new string('=', title.Length);
 
-Enter your choice here: ");
+            Console.ForegroundColor = ConsoleColor.White;
+            menu.AppendLine(border);
+            menu.AppendLine(title);
+            menu.AppendLine(border);
+
+            Console.ForegroundColor = ConsoleColor.White; 
+            menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Put your vehicle in the garage."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Display all license plates of vehicles in the garage."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "3.", "Update the status of a vehicle in the garage."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "4.", "Inflate tires of a chosen vehicle to the maximum capacity."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "5.", "Fuel a vehicle."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "6.", "Charge a vehicle."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "7.", "Show all the information of a vehicle by license plate number."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "8.", "Exit garage."));
+
+            menu.AppendLine(border);
+
+            Console.Write(menu.ToString());
+
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write("Enter your choice here: ");
+
+            Console.ResetColor();
         }
 
         private void showTypeOfVehicleMenu()
         {
-            Console.Write(@"Please choose the vehicle type:
+            Console.Clear();
 
-1. Electric Car.
-2. Fuel Car.
-3. Electric Motorcycle.
-4. Fuel Motorcycle
-5. Truck
-Enter Your Choice: ");
+            StringBuilder menu = new StringBuilder();
+            string title = "==== Choose Vehicle Type ====";
+            string border = new string('=', title.Length);
+
+            // Constructing the menu
+            menu.AppendLine(border);
+            menu.AppendLine(title);
+            menu.AppendLine(border);
+            menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Electric Car"));
+            menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Fuel Car"));
+            menu.AppendLine(string.Format("{0, -2} {1}", "3.", "Electric Motorcycle"));
+            menu.AppendLine(string.Format("{0, -2} {1}", "4.", "Fuel Motorcycle"));
+            menu.AppendLine(string.Format("{0, -2} {1}", "5.", "Truck"));
+            menu.AppendLine(border);
+
+            Console.ForegroundColor = ConsoleColor.White; 
+            Console.Write(menu.ToString());
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write("Enter Your Choice: ");
+            Console.ResetColor(); 
         }
 
-        private int showMenuOfOptionToFilterCarsInGarage()
+        private int showMenuOfOptionToFilterCarsInGarage() // CHANGE THE NAME OF THIS FUNCTION
         {
-            int userChoice = 0 ;
-            Console.WriteLine("Displaying license plates using the following filter: \n");
-            Console.Write(@"Pick A Filter:
+            Console.Clear();
 
-1. Filter by current state in the garage.
-2. Don't use filtering.
-Enter Your Choice: ");
-            userChoice = (int)getAndValidateInputFromUserInRange(1, 2); 
-           return userChoice;
-            
+            StringBuilder menu = new StringBuilder();
+            string title = "==== License Plate Filter ====";
+            string border = new string('=', title.Length);
+
+            menu.AppendLine(border);
+            menu.AppendLine(title);
+            menu.AppendLine(border);
+            menu.AppendLine("Displaying license plates using the following filter:\n");
+            menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Filter by current state in the garage."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Don't use filtering."));
+            menu.AppendLine(border);
+
+            Console.ForegroundColor = ConsoleColor.White; 
+            Console.Write(menu.ToString());
+            Console.ForegroundColor = ConsoleColor.DarkCyan; 
+            Console.Write("Enter Your Choice: ");
+            Console.ResetColor(); 
+            int userChoice = (int)getAndValidateInputFromUserInRange(1, 2);
+
+            return userChoice;
+
         }
 
         private void displayFuelMenu()
         {
-            Console.Write(@"Choose A Fuel:
-1. Octan95.
-2. Octan96.
-3. Octan98.
-4. Soler.
-Enter Your Choice: ");
+            Console.Clear();
+
+            StringBuilder menu = new StringBuilder();
+            string title = "==== Choose A Fuel ====";
+            string border = new string('=', title.Length);
+
+            menu.AppendLine(border);
+            menu.AppendLine(title);
+            menu.AppendLine(border);
+            menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Octan95"));
+            menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Octan96"));
+            menu.AppendLine(string.Format("{0, -2} {1}", "3.", "Octan98"));
+            menu.AppendLine(string.Format("{0, -2} {1}", "4.", "Soler"));
+            menu.AppendLine(border);
+
+            Console.ForegroundColor = ConsoleColor.White; 
+            Console.Write(menu.ToString());
+            Console.ForegroundColor = ConsoleColor.DarkCyan; 
+            Console.Write("Enter Your Choice: ");
+            Console.ResetColor(); 
         }
 
         // See later if the type int is suitable.
@@ -100,7 +157,7 @@ Enter Your Choice: ");
 
         private void executeUserChoice(int i_UserChoice, ref bool io_IsGarageOpen, Garage i_Garage)
         {
-            io_IsGarageOpen = false;
+            io_IsGarageOpen = true;
             Console.Clear();
 
             switch (i_UserChoice)
@@ -130,6 +187,7 @@ Enter Your Choice: ");
                     break;
                 case 8:
                     Console.Clear();
+                    io_IsGarageOpen = false;
                     exitingScreen(out io_IsGarageOpen);
                     break;
                 
@@ -155,14 +213,15 @@ Enter Your Choice: ");
                 catch (ArgumentException exception)
                 {
                     Console.WriteLine(exception.Message);
-                    userChoice = this.showBadInputMessageTryAgainAndGetMenu();
+                    userChoice = showBadInputMessageTryAgainAndGetMenu();
                 }
             }
         }
 
         private void getVehicleStatusAndOwnerDetails(Garage i_Garage)
         {
-            Console.WriteLine("Vehicle Is Being Added To The Garage: \n");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" === Vehicle Is Being Added To The Garage === \n");
             Garage.VehicleStatusAndOwnerDetails VehicleStatusAndOwnerDetails = null;
             string licenseNumber = getVehicleLicenseNumberFromUser();
 
@@ -178,7 +237,9 @@ Enter Your Choice: ");
                 Vehicle newVehicle = VehicleAllocator.AllocateVehicle(vehicleType, licenseNumber);
                 VehicleStatusAndOwnerDetails = setInformationForVehicle(newVehicle, vehicleType);
                 i_Garage.VehiclesOfGarage.Add(licenseNumber, VehicleStatusAndOwnerDetails);
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Vehicle Added Successfully.");
+                Console.ResetColor();
             }
             
             displayBackToMenuOption();
@@ -192,6 +253,7 @@ Enter Your Choice: ");
             o_FuelChoice = 0;
             if(i_EngineType == Engine.eEngineType.Fuel)
             {
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Please Enter Which Octan You'd Like:");
                 displayFuelMenu();
                 o_FuelChoice = (int)getAndValidateInputFromUserInRange(1, 4);
@@ -251,8 +313,11 @@ Enter Your Choice: ");
 
         private void displayBackToMenuOption()
         {
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("Press Any Key To Get Back To Menu");
             Console.ReadKey();
+            Console.ResetColor();
         }
 
         private int getAndValidatePositiveNumberInput(string i_Message)
@@ -272,6 +337,7 @@ Enter Your Choice: ");
 
         private string getVehicleLicenseNumberFromUser()
         {
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Enter The License Number Of The Vehicle: ");
             string licenseNumber = getAndValidateStringInputOfDigitsAndLetters();
 
@@ -285,14 +351,23 @@ Enter Your Choice: ");
             string manufactorName;
             float currentAirPressure, currentEnergy;
 
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("==== VEHICLE INFORMATION ENTRY ====\n");
+            Console.WriteLine("Answer The Questions To Set The Vehicle Information");
+            Console.WriteLine("----------------------------------------------------");
+
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Enter The Model Name: ");
             i_Vehicle.ModelName = getAndValidateStringInputOfDigitsAndLetters();
-            Console.Write("Enter Wheels Manufactor Name: ");
+
+            Console.Write("Enter Wheels Manufacturer Name: ");
             manufactorName = getAndValidateStringInputOfDigitsAndLetters();
+
             Console.Write("Enter Wheels Remaining Air Pressure: ");
             currentAirPressure = getAndValidateInputFromUserInRange(0, (int)i_Vehicle.Wheels.First().MaxAirPressure);
-            Console.Write("Enter Remaining Power Left In Vehicle: ");
 
+            Console.Write("Enter Remaining Power Left In Vehicle: ");
             if(i_Vehicle.Engine is Engine.FuelBasedEngine)
             {
                 currentEnergy = getAndValidateInputFromUserInRange(
@@ -305,16 +380,20 @@ Enter Your Choice: ");
                     0,
                     (int)(i_Vehicle.Engine as Engine.ElectricBasedEngine).BatteryCapacity);
             }
+
             i_Vehicle.SetPowerLevelLeft(currentEnergy);
             i_Vehicle.SetPowerPercentageLeft();
             getVehicleOwnerData(out string o_OwnerName, out string o_OwnerPhoneNumber);
             i_Vehicle.SetVehicleWheels(manufactorName, currentAirPressure);
             correctAndSetVehicleInformation(ref i_Vehicle, i_VehicleType);
-            return new Garage.VehicleStatusAndOwnerDetails(o_OwnerName, o_OwnerPhoneNumber, i_Vehicle);
 
+            Console.ResetColor();
+
+            return new Garage.VehicleStatusAndOwnerDetails(o_OwnerName, o_OwnerPhoneNumber, i_Vehicle);
         }
-        private void getVehicleOwnerData(out string o_OwnerName, out string o_OwnerPhoneNumber)
+            private void getVehicleOwnerData(out string o_OwnerName, out string o_OwnerPhoneNumber)
         {
+            Console.ForegroundColor = ConsoleColor.White;
             o_OwnerName = this.getAndValidateStringOfChars("Enter Your name: ");
             o_OwnerPhoneNumber = this.getAndValidatePositiveNumberInput("Enter your phone number: ").ToString();
         }
@@ -364,8 +443,9 @@ Enter Your Choice: ");
                     string licenseNumber = getVehicleLicenseNumberFromUser();
                     i_Garage.FillWheelsToMaxAirPressureByLicenseNumber(licenseNumber);
                     userChoice = 2;
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Tires Filled Successfully.");
-                    this.displayBackToMenuOption();
+                    displayBackToMenuOption();
                 }
                 catch (ArgumentException exception)
                 {
@@ -435,18 +515,18 @@ Choice: ");
         private void updateStatusOfVehicle(Garage i_Garage)
         {
             Console.WriteLine("Updating Vehicle Status..." + Environment.NewLine);
-            Garage.VehicleStatusAndOwnerDetails.eVehicleGarageStatus status = this.getStatusOfVehicle();
+            Garage.VehicleStatusAndOwnerDetails.eVehicleGarageStatus status = getStatusOfVehicle();
             int userChoice = 1;
 
             while (userChoice == 1)
             {
                 try
                 {
-                    string licenseNumber = this.getVehicleLicenseNumberFromUser();
+                    string licenseNumber = getVehicleLicenseNumberFromUser();
                     i_Garage.SetVehicleGarageStatus(licenseNumber, status);
                     userChoice = 2;
                     Console.WriteLine("Vehicle Status Changed Successfully!");
-                    this.displayBackToMenuOption();
+                    displayBackToMenuOption();
                 }
                 catch (ArgumentException exception)
                 {
@@ -509,14 +589,15 @@ Enter Your Choice: ");
 
         private void exitingScreen(out bool o_IsGargeOpen)
         {
-            Console.WriteLine("Closing Garage");
+            Console.Write("Closing Garage");
             for (int i = 0; i < 3; i++)
             {
-                System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(800);
                 Console.Write('.');
             }
-            o_IsGargeOpen = false;
             Console.WriteLine("");
+            Console.WriteLine("Garage Is Closed. Have A Great Day !");
+            o_IsGargeOpen = false;
         }
 
     }

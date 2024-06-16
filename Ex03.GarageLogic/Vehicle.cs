@@ -15,12 +15,13 @@ namespace Ex03.GarageLogic
         private Engine m_Engine;
 
 
-        public Vehicle(string i_LicenseNumber, int i_NumberOfWheels,float i_MaxAirPressureForWheel, Engine i_Engine)
+        public Vehicle(string i_LicenseNumber, int i_NumberOfWheels, float i_MaxAirPressureForWheel, Engine i_Engine)
         {
 
             m_PercentagePowerLeft = 0;
             m_Engine = i_Engine;
             r_LicenseNumber = i_LicenseNumber;
+            r_Wheels = new List<Wheel>();
 
             for(int i = 0; i < i_NumberOfWheels; ++i)
             {

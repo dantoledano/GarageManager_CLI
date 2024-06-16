@@ -17,18 +17,16 @@ namespace Ex03.ConsoleUI
         {
             bool isGarageOpen = false;
             int userMenuChoice;
+            Garage garage = new Garage();
 
-            /*
             while (!isGarageOpen)
             {
                 showMenu();
-               // userMenuChoice = getUserInput();
-               // execute the option the user chose.
+               userMenuChoice = (int)getAndValidateInputFromUserInRange(1,8);
+               executeUserChoice(userMenuChoice, ref isGarageOpen,garage);
 
             }
-            */
-            showMenu();
-
+            
         }
         private void showMenu()
         {
@@ -67,9 +65,9 @@ Enter Your Choice: ");
 1. Filter by current state in the garage.
 2. Don't use filtering.
 Enter Your Choice: ");
-            userChoice = getAndValidateInputFromUserInRange(1, 2); 
+            userChoice = (int)getAndValidateInputFromUserInRange(1, 2); 
            return userChoice;
-
+            
         }
 
         private void displayFuelMenu()
@@ -83,13 +81,13 @@ Enter Your Choice: ");
         }
 
         // See later if the type int is suitable.
-        private int getAndValidateInputFromUserInRange(int i_MinValue, int i_MaxValue)
+        private float getAndValidateInputFromUserInRange(int i_MinValue, int i_MaxValue)
         {
             string userInputChoice = Console.ReadLine();
-            int userInputNumerical = 0;
+            float userInputNumerical = 0;
 
-            while (!int.TryParse(userInputChoice, out userInputNumerical) ||
-                   OutOfRangeException.IsOutOfRangeValue(userInputNumerical, i_MaxValue, i_MinValue))
+            while (!float.TryParse(userInputChoice, out userInputNumerical) ||
+                   OutOfRangeException.IsOutOfRangeValue(userInputNumerical, i_MinValue, i_MaxValue))
             {
                 string messageOutOfRange =
                     string.Format("Your Choice is out of range ! Enter input again in the range {0} - {1}:",
@@ -196,7 +194,7 @@ Enter Your Choice: ");
             {
                 Console.WriteLine("Please Enter Which Octan You'd Like:");
                 displayFuelMenu();
-                o_FuelChoice = getAndValidateInputFromUserInRange(1, 4);
+                o_FuelChoice = (int)getAndValidateInputFromUserInRange(1, 4);
             }
             Console.WriteLine("Enter how much you'd like to add to you vehicle: ");
             o_FuelAmountToAdd = getAndValidateInputFromUserInRange(0, 120);

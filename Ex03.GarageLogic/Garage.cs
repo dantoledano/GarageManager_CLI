@@ -141,10 +141,11 @@ namespace Ex03.GarageLogic
 
             public enum eVehicleGarageStatus
             {
+                Default,
                 UnderRepair,
                 Repaired,
                 Paid,
-                Default
+                
             }
 
             public VehicleStatusAndOwnerDetails(string i_OwnerName, string i_OwnerPhoneNumber, Vehicle i_Vehicle)
@@ -201,6 +202,20 @@ namespace Ex03.GarageLogic
                 {
                     m_VehicleStatus = value;
                 }
+            }
+
+            public override string ToString()
+            {
+                StringBuilder vehicleInGarageDetails = new StringBuilder();
+                vehicleInGarageDetails.AppendFormat(@"Owner information:
+    Owner Name: {0}
+    Owner Phone Number: {1}
+",
+m_OwnerName,
+m_OwnerPhoneNumber);
+                vehicleInGarageDetails.AppendFormat(this.m_Vehicle.ToString());
+                vehicleInGarageDetails.AppendFormat("The Status Of The Vehicle: {0}" + Environment.NewLine, m_VehicleStatus.ToString());
+                return vehicleInGarageDetails.ToString();
             }
 
         }

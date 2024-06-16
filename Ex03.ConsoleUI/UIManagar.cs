@@ -44,7 +44,7 @@ namespace Ex03.ConsoleUI
             menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Put your vehicle in the garage."));
             menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Display all license plates of vehicles in the garage."));
             menu.AppendLine(string.Format("{0, -2} {1}", "3.", "Update the status of a vehicle in the garage."));
-            menu.AppendLine(string.Format("{0, -2} {1}", "4.", "Inflate tires of a chosen vehicle to the maximum capacity."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "4.", "Inflate wheels of a chosen vehicle to the maximum capacity."));
             menu.AppendLine(string.Format("{0, -2} {1}", "5.", "Fuel a vehicle."));
             menu.AppendLine(string.Format("{0, -2} {1}", "6.", "Charge a vehicle."));
             menu.AppendLine(string.Format("{0, -2} {1}", "7.", "Show all the information of a vehicle by license plate number."));
@@ -60,7 +60,7 @@ namespace Ex03.ConsoleUI
             Console.ResetColor();
         }
 
-        private void showTypeOfVehicleMenu()
+        private void displayTypeOfVehicleMenu()
         {
             Console.Clear();
 
@@ -68,14 +68,13 @@ namespace Ex03.ConsoleUI
             string title = "==== Choose Vehicle Type ====";
             string border = new string('=', title.Length);
 
-            // Constructing the menu
             menu.AppendLine(border);
             menu.AppendLine(title);
             menu.AppendLine(border);
-            menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Electric Car"));
-            menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Fuel Car"));
-            menu.AppendLine(string.Format("{0, -2} {1}", "3.", "Electric Motorcycle"));
-            menu.AppendLine(string.Format("{0, -2} {1}", "4.", "Fuel Motorcycle"));
+            menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Fuel Motorcycle"));
+            menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Electric Motorcycle"));
+            menu.AppendLine(string.Format("{0, -2} {1}", "3.", "Fuel Car"));
+            menu.AppendLine(string.Format("{0, -2} {1}", "4.", "Electric Car"));
             menu.AppendLine(string.Format("{0, -2} {1}", "5.", "Truck"));
             menu.AppendLine(border);
 
@@ -138,13 +137,13 @@ namespace Ex03.ConsoleUI
         }
 
         // See later if the type int is suitable.
-        private float getAndValidateInputFromUserInRange(int i_MinValue, int i_MaxValue)
+        private float getAndValidateInputFromUserInRange(float i_MinValue, float i_MaxValue)
         {
             string userInputChoice = Console.ReadLine();
             float userInputNumerical = 0;
 
             while (!float.TryParse(userInputChoice, out userInputNumerical) ||
-                   OutOfRangeException.IsOutOfRangeValue(userInputNumerical, i_MinValue, i_MaxValue))
+                   ValueOutOfRangeException.IsValueOutOfRange(userInputNumerical, i_MinValue, i_MaxValue))
             {
                 string messageOutOfRange =
                     string.Format("Your Choice is out of range ! Enter input again in the range {0} - {1}:",
@@ -166,20 +165,20 @@ namespace Ex03.ConsoleUI
                     getVehicleStatusAndOwnerDetails(i_Garage);
                     break;
                 case 2:
-                    showLicensePlatesInGarage((int)showMenuOfOptionToFilterCarsInGarage(), i_Garage);
+                    showLicenseNumbersInGarage((int)showMenuOfOptionToFilterCarsInGarage(), i_Garage);
                     break;
                 case 3:
                     updateStatusOfVehicle(i_Garage);
                     break;
                 case 4:
-                    inflateVehicleTires(i_Garage);
+                    inflateVehicleWheels(i_Garage);
                     break;
                 case 5:
                     Console.WriteLine("Procedding To Fueling Station...\n");
                     powerUpVehicle(i_Garage, Engine.eEngineType.Fuel);
                     break;
                 case 6:
-                    Console.WriteLine("Procedding To Charing Station...\n");
+                    Console.WriteLine("Procedding To Charging Station...\n");
                     powerUpVehicle(i_Garage, Engine.eEngineType.Battery);
                     break;
                 case 7:
@@ -232,7 +231,7 @@ namespace Ex03.ConsoleUI
             }
             else
             {
-                showTypeOfVehicleMenu();
+                displayTypeOfVehicleMenu();
                 VehicleAllocator.eVehicleType vehicleType = (VehicleAllocator.eVehicleType)getAndValidateInputFromUserInRange(1, 5);
                 Vehicle newVehicle = VehicleAllocator.AllocateVehicle(vehicleType, licenseNumber);
                 VehicleStatusAndOwnerDetails = setInformationForVehicle(newVehicle, vehicleType);
@@ -320,7 +319,7 @@ namespace Ex03.ConsoleUI
             Console.ResetColor();
         }
 
-        private int getAndValidatePositiveNumberInput(string i_Message)
+        private string getAndValidatePositiveNumberInput(string i_Message)
         {
             Console.Write(i_Message);
             string userInput = Console.ReadLine();
@@ -332,7 +331,7 @@ namespace Ex03.ConsoleUI
                 userInput = Console.ReadLine();
             }
 
-            return numberUserInput;
+            return userInput;
         }
 
         private string getVehicleLicenseNumberFromUser()
@@ -372,13 +371,13 @@ namespace Ex03.ConsoleUI
             {
                 currentEnergy = getAndValidateInputFromUserInRange(
                     0,
-                    (int)(i_Vehicle.Engine as Engine.FuelBasedEngine).MaxAmountOfFuel);
+                    (i_Vehicle.Engine as Engine.FuelBasedEngine).MaxAmountOfFuel);
             }
             else
             {
                 currentEnergy = getAndValidateInputFromUserInRange(
                     0,
-                    (int)(i_Vehicle.Engine as Engine.ElectricBasedEngine).BatteryCapacity);
+                    (i_Vehicle.Engine as Engine.ElectricBasedEngine).BatteryCapacity);
             }
 
             i_Vehicle.SetPowerLevelLeft(currentEnergy);
@@ -413,7 +412,7 @@ namespace Ex03.ConsoleUI
                 }
                 catch (Exception exception)
                 {
-                    if (exception is FormatException || exception is OutOfRangeException || exception is ArgumentException)
+                    if (exception is FormatException || exception is ValueOutOfRangeException || exception is ArgumentException)
                     {
                         while (exception != null)
                         {
@@ -431,7 +430,7 @@ namespace Ex03.ConsoleUI
         }
 
 
-        private void inflateVehicleTires(Garage i_Garage)
+        private void inflateVehicleWheels(Garage i_Garage)
         {
             Console.WriteLine("Inflating Air Pressure To Maximum" + Environment.NewLine);
             int userChoice = 1;
@@ -444,7 +443,7 @@ namespace Ex03.ConsoleUI
                     i_Garage.FillWheelsToMaxAirPressureByLicenseNumber(licenseNumber);
                     userChoice = 2;
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Tires Filled Successfully.");
+                    Console.WriteLine("Wheels Filled Successfully.");
                     displayBackToMenuOption();
                 }
                 catch (ArgumentException exception)
@@ -452,7 +451,7 @@ namespace Ex03.ConsoleUI
                     Console.WriteLine(exception.Message);
                     userChoice = showBadInputMessageTryAgainAndGetMenu();
                 }
-                catch (OutOfRangeException exception)
+                catch (ValueOutOfRangeException exception)
                 {
                     Console.WriteLine(exception.Message);
                     userChoice = showBadInputMessageTryAgainAndGetMenu();
@@ -461,16 +460,17 @@ namespace Ex03.ConsoleUI
         }
 
 
-        private void showLicensePlatesInGarage(int i_UserFilterChoice, Garage i_Garage)
+        private void showLicenseNumbersInGarage(int i_UserFilterChoice, Garage i_Garage)
         {
-            Garage.VehicleStatusAndOwnerDetails.eVehicleGarageStatus status = Garage.VehicleStatusAndOwnerDetails.eVehicleGarageStatus.Default;
-
+            bool isFiltered = false;
+            Garage.VehicleStatusAndOwnerDetails.eVehicleGarageStatus status = Garage.VehicleStatusAndOwnerDetails.eVehicleGarageStatus.UnderRepair;
             if (i_UserFilterChoice == 1)
             {
                 status = getStatusOfVehicle();
+                isFiltered = true;
             }
 
-            string licensePlatesByStatus = i_Garage.GetListOfLicenseNumberByStatus(status);
+            string licensePlatesByStatus = i_Garage.GetListOfLicenseNumberByStatus(status, isFiltered);
 
             if (licensePlatesByStatus.Length != 0)
             {
@@ -502,7 +502,7 @@ namespace Ex03.ConsoleUI
         {
             Garage.VehicleStatusAndOwnerDetails.eVehicleGarageStatus status;
             Console.Write(@"Choose Vehicle Status: 
-1. In repair
+1. Under repair
 2. Repaired
 3. Paid
 Choice: ");
@@ -568,7 +568,7 @@ Enter Your Choice: ");
                 {
                     Console.WriteLine(exception.Message);
                 }
-                catch (OutOfRangeException exception)
+                catch (ValueOutOfRangeException exception)
                 {
                     Console.WriteLine(exception.Message);
 

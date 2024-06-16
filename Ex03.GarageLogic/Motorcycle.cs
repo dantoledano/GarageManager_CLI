@@ -58,7 +58,7 @@ namespace Ex03.GarageLogic
         {
             StringBuilder motorcycleAttributes = new StringBuilder();
 
-            motorcycleAttributes.Append(base.ToString());
+            //motorcycleAttributes.Append(base.ToString());
             motorcycleAttributes.AppendFormat(@"Motorcycle Attributes: 
 License Type: {0}
 Engine Capacity: {1}", m_LicenseType.ToString(), m_EngineCapacity.ToString());
@@ -112,9 +112,9 @@ Engine Capacity: {1}", m_LicenseType.ToString(), m_EngineCapacity.ToString());
                 exception = new FormatException("Wrong Format. Enter License Type Again: ");
                 exception.Source = "1";
             }
-            else if (OutOfRangeException.IsOutOfRangeValue(o_LicenseType, 1, 4))
+            else if (ValueOutOfRangeException.IsValueOutOfRange(o_LicenseType, 1, 4))
             {
-                exception = new OutOfRangeException(1, 4, "Out Of Range Choice (License Type). Enter Choice Again: ", exception);
+                exception = new ValueOutOfRangeException(1, 4, "Out Of Range Choice (License Type). Enter Choice Again: ", exception);
                 exception.Source = "1";
             }
 
@@ -124,9 +124,9 @@ Engine Capacity: {1}", m_LicenseType.ToString(), m_EngineCapacity.ToString());
                 exception.Source = "1";
             }
 
-            else if(OutOfRangeException.IsOutOfRangeValue(o_EngineCapacity, 1, 1500))
+            else if(ValueOutOfRangeException.IsValueOutOfRange(o_EngineCapacity, 1, 2147)) // 2147 Because Harley Davidson has the biggest engine.
             {
-                exception = new OutOfRangeException(1, 1500, "Out Of Range Choice (Engine Capacity). Enter Choice Again: ", exception);
+                exception = new ValueOutOfRangeException(1, 2147, "Out Of Range Choice (Engine Capacity). Enter Choice Again: ", exception);
                 exception.Source = "1";
             }
             return exception;

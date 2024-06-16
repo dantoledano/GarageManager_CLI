@@ -64,7 +64,7 @@ namespace Ex03.GarageLogic
 
                     if (i_AmountToFuel < 0)
                     {
-                        throw new OutOfRangeException(0, MaxAmountOfFuel, "Fuel Amount Cannot Be Negative");
+                        throw new ValueOutOfRangeException(0, MaxAmountOfFuel, "Fuel Amount Cannot Be Negative");
                     }
 
                     if (m_FuelLeft > MaxAmountOfFuel)
@@ -72,16 +72,16 @@ namespace Ex03.GarageLogic
                         m_FuelLeft -= i_AmountToFuel;
                         if (m_FuelLeft == MaxAmountOfFuel)
                         {
-                            throw new OutOfRangeException(0, MaxAmountOfFuel, "Tank Is Full Already !");
+                            throw new ValueOutOfRangeException(0, MaxAmountOfFuel, "Tank Is Full Already !");
                         }
                         else
                         {
-                            throw new OutOfRangeException(0, MaxAmountOfFuel, "Maximum fuel exceeded !");
+                            throw new ValueOutOfRangeException(0, MaxAmountOfFuel, "Maximum fuel exceeded !");
                         }
                     }
                 }
 
-                catch (OutOfRangeException exception)
+                catch (ValueOutOfRangeException exception)
                 {
                     string errorMessage = string.Format("Error: {0}", exception.Message);
                     Console.WriteLine(errorMessage);
@@ -140,7 +140,7 @@ namespace Ex03.GarageLogic
 
                     if (i_AmountToCharge < 0)
                     {
-                        throw new OutOfRangeException(0, BatteryCapacity, "Charge Amount Cannot Be Negative");
+                        throw new ValueOutOfRangeException(0, BatteryCapacity, "Charge Amount Cannot Be Negative");
                     }
 
                     if (m_BatteryTimeLeft > m_BatteryCapacity)
@@ -148,16 +148,16 @@ namespace Ex03.GarageLogic
                         m_BatteryTimeLeft -= i_AmountToCharge;
                         if (m_BatteryTimeLeft == m_BatteryCapacity)
                         {
-                            throw new OutOfRangeException(0, BatteryCapacity, "Battery Is Full Already !");
+                            throw new ValueOutOfRangeException(0, BatteryCapacity, "Battery Is Full Already !");
                         }
                         else
                         {
-                            throw new OutOfRangeException(0, BatteryCapacity, "Maximum Charge Exceeded !");
+                            throw new ValueOutOfRangeException(0, BatteryCapacity, "Maximum Charge Exceeded !");
                         }
                     }
                 }
 
-                catch (OutOfRangeException ex)
+                catch (ValueOutOfRangeException ex)
                 {
                     string errorMessage = string.Format("Error: {0}", ex.Message);
                     Console.WriteLine(errorMessage);

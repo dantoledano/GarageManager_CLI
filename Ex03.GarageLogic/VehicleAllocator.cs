@@ -12,10 +12,10 @@ namespace Ex03.GarageLogic
     {
         public enum eVehicleType
         {
-            ElectricCar = 1,
-            FueledCar = 2,
-            ElectricMotorcycle = 3,
-            FueledMotorCycle = 4,
+            FueledMotorCycle = 1,
+            ElectricMotorcycle = 2,
+            FueledCar = 3,
+            ElectricCar = 4,
             Truck = 5
         }
         //-----------------------------------------------------------------------------------------------------------------------//
@@ -26,24 +26,24 @@ namespace Ex03.GarageLogic
 
             switch (i_TypeOfVehicle)
             {
-                case eVehicleType.ElectricCar:
-                    newEngine = new Engine.ElectricBasedEngine(2.1f);
-                    newVehicle = new Car(newEngine, i_LicenseNumber);
-                    break;
-                case eVehicleType.FueledCar:
-                    newEngine = new Engine.FuelBasedEngine(60 ,Engine.FuelBasedEngine.eFuelOctan.Octan96);
-                    newVehicle = new Car(newEngine, i_LicenseNumber);
+                case eVehicleType.FueledMotorCycle:
+                    newEngine = new Engine.FuelBasedEngine((float)5.5, Engine.FuelBasedEngine.eFuelOctan.Octan95);
+                    newVehicle = new Motorcycle(newEngine, i_LicenseNumber);
                     break;
                 case eVehicleType.ElectricMotorcycle:
-                    newEngine = new Engine.ElectricBasedEngine(1.2f);
+                    newEngine = new Engine.ElectricBasedEngine((float)2.5);
                     newVehicle = new Motorcycle(newEngine, i_LicenseNumber);
                     break;
-                case eVehicleType.FueledMotorCycle:
-                    newEngine = new Engine.FuelBasedEngine(7f, Engine.FuelBasedEngine.eFuelOctan.Octan95);
-                    newVehicle = new Motorcycle(newEngine, i_LicenseNumber);
+                case eVehicleType.FueledCar:
+                    newEngine = new Engine.FuelBasedEngine((float)45, Engine.FuelBasedEngine.eFuelOctan.Octan96);
+                    newVehicle = new Car(newEngine, i_LicenseNumber);
+                    break;
+                case eVehicleType.ElectricCar:
+                    newEngine = new Engine.ElectricBasedEngine((float)3.5);
+                    newVehicle = new Car(newEngine, i_LicenseNumber);
                     break;
                 case eVehicleType.Truck:
-                    newEngine = new Engine.FuelBasedEngine(120f, Engine.FuelBasedEngine.eFuelOctan.Soler);
+                    newEngine = new Engine.FuelBasedEngine((float)120, Engine.FuelBasedEngine.eFuelOctan.Soler);
                     newVehicle = new Truck(newEngine, i_LicenseNumber);
                     break;
                 default:

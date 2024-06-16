@@ -49,7 +49,7 @@ namespace Ex03.GarageLogic
         public override string ToString()
         {
             StringBuilder truckDetails = new StringBuilder();
-            truckDetails.Append(base.ToString());
+            //truckDetails.Append(base.ToString());
             truckDetails.AppendFormat(@"Truck Attributes:
     Transporting Toxins: {0}
     Cargo Capacity: {1}",
@@ -122,7 +122,7 @@ namespace Ex03.GarageLogic
             // No maximum of cargo capacity were mentioned
             else if(o_CargoCapacity < 0 || o_CargoCapacity > 9999999)
             {
-                exception = new OutOfRangeException(1, 9999999, "Out Of Range Cargo Capacity");
+                exception = new ValueOutOfRangeException(1, 9999999, "Out Of Range Cargo Capacity");
                 exception.Source = "1";
             }
 

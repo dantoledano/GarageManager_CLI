@@ -58,13 +58,14 @@ namespace Ex03.GarageLogic
          {
              StringBuilder carAttributes = new StringBuilder();
 
-             carAttributes.Append(base.ToString());
+             //carAttributes.Append(base.ToString());
              carAttributes.AppendFormat(
                  @"Car Attributes:
                    Color: {0}
                    Number of Doors: {1}", m_CarColor.ToString(), m_NumberOfDoors.ToString());
              carAttributes.Append(Environment.NewLine);
              Console.WriteLine(carAttributes.ToString());
+             
 
              return carAttributes.ToString();
          }
@@ -112,9 +113,9 @@ namespace Ex03.GarageLogic
                 exception = new FormatException("Invalid format of input of the number of doors, please try again: ");
                 exception.Source = "1";
             }
-            else if (OutOfRangeException.IsOutOfRangeValue(o_NumberOfDoors, 2, 5))
+            else if (ValueOutOfRangeException.IsValueOutOfRange(o_NumberOfDoors, 2, 5))
             {
-                exception = new OutOfRangeException(2, 5, "Number of doors for car is out of range, please try again (Choose a number between 2-5): ", exception);
+                exception = new ValueOutOfRangeException(2, 5, "Number of doors for car is out of range, please try again (Choose a number between 2-5): ", exception);
                 exception.Source = "1";
             }
             if (!int.TryParse(i_userResponses[0], out o_ColorPicked))
@@ -122,9 +123,9 @@ namespace Ex03.GarageLogic
                 exception = new FormatException("Format of input of the color isn't valid, please try again: ");
                 exception.Source = "0";
             }
-            else if (OutOfRangeException.IsOutOfRangeValue(o_ColorPicked, 1, 4))
+            else if (ValueOutOfRangeException.IsValueOutOfRange(o_ColorPicked, 1, 4))
             {
-                exception = new OutOfRangeException(1, 4, "Color choice for the car is out of range, please try again: ", exception);
+                exception = new ValueOutOfRangeException(1, 4, "Color choice for the car is out of range, please try again: ", exception);
                 exception.Source = "0";
             }
 

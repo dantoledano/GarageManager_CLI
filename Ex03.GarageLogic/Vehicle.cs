@@ -178,10 +178,10 @@ namespace Ex03.GarageLogic
                     if(m_RemainingAir > r_MaxAirPressure)
                     {
                         m_RemainingAir -= i_AmountOfAirToFill;
-                        throw new OutOfRangeException(0, MaxAirPressure, "You Exceeded Tire Air Pressure!");
+                        throw new ValueOutOfRangeException(0, MaxAirPressure, "You Exceeded Tire Air Pressure!");
                     }
                 }
-                catch(OutOfRangeException exception)
+                catch(ValueOutOfRangeException exception)
                 {
                     string errorMessage = string.Format("Error: {0}", exception.Message);
                     Console.WriteLine(errorMessage);

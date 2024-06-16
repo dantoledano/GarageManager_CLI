@@ -73,7 +73,7 @@ namespace Ex03.GarageLogic
                     }
                 }
             }
-            catch(OutOfRangeException exeption)
+            catch(ValueOutOfRangeException exeption)
             {
                 throw exeption;
             }
@@ -101,19 +101,29 @@ namespace Ex03.GarageLogic
             }
         }
 
-        public string GetListOfLicenseNumberByStatus(VehicleStatusAndOwnerDetails.eVehicleGarageStatus i_DesiredStatusToFilter)
+        public string GetListOfLicenseNumberByStatus(VehicleStatusAndOwnerDetails.eVehicleGarageStatus i_DesiredStatusToFilter, bool i_IsFilter)
         {
-            int countOfDesiredVehicles = 0;
+            int countOfDesiredVehicles = 1;
             StringBuilder listOfDesiredVehiclesLicenseNumbers = new StringBuilder();
 
             foreach(KeyValuePair<string, VehicleStatusAndOwnerDetails> currentPair in r_VehiclesOfGarage)
             {
-                if(currentPair.Value.VehicleStatus == i_DesiredStatusToFilter)
+                if(i_IsFilter == true)
+                {
+                    if (currentPair.Value.VehicleStatus == i_DesiredStatusToFilter)
+                    {
+                        listOfDesiredVehiclesLicenseNumbers.Append(countOfDesiredVehicles.ToString() + ") ");
+                        listOfDesiredVehiclesLicenseNumbers.AppendLine(currentPair.Key);
+                        countOfDesiredVehicles++;
+                    }
+                }
+                else
                 {
                     listOfDesiredVehiclesLicenseNumbers.Append(countOfDesiredVehicles.ToString() + ") ");
                     listOfDesiredVehiclesLicenseNumbers.AppendLine(currentPair.Key);
                     countOfDesiredVehicles++;
                 }
+
             }
 
             return listOfDesiredVehiclesLicenseNumbers.ToString();

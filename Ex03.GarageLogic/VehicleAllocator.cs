@@ -18,7 +18,7 @@ namespace Ex03.GarageLogic
             ElectricCar = 4,
             Truck = 5
         }
-        //-----------------------------------------------------------------------------------------------------------------------//
+   
         public static Vehicle AllocateVehicle(eVehicleType i_TypeOfVehicle, string i_LicenseNumber)
         {
             Vehicle newVehicle;
@@ -54,7 +54,7 @@ namespace Ex03.GarageLogic
 
             return newVehicle;
         }
-        //-----------------------------------------------------------------------------------------------------------------------//
+       
         public static List<string> GetAndSetVehicleQueries(VehicleAllocator.eVehicleType i_TypeOfVehicle, Vehicle i_Vehicle)
         {
             List<string> queriesList = null;
@@ -79,20 +79,20 @@ namespace Ex03.GarageLogic
             return queriesList;
         }
 
-        public static void SetResponsesForVehicle(VehicleAllocator.eVehicleType i_VehicleType, Vehicle i_Vehicle, List<string> i_userResponses)
+        public static void SetResponsesForVehicle(VehicleAllocator.eVehicleType i_VehicleType, Vehicle i_Vehicle, List<string> i_UserResponses)
         {
             switch (i_VehicleType)
             {
                 case eVehicleType.ElectricCar:
                 case eVehicleType.FueledCar:
-                    (i_Vehicle as Car).SetResponsesForVehicleQueries(i_userResponses);
+                    (i_Vehicle as Car).SetResponsesForVehicleQueries(i_UserResponses);
                     break;
                 case eVehicleType.ElectricMotorcycle:
                 case eVehicleType.FueledMotorCycle:
-                    (i_Vehicle as Motorcycle).SetResponsesForVehicleQueries(i_userResponses);
+                    (i_Vehicle as Motorcycle).SetResponsesForVehicleQueries(i_UserResponses);
                     break;
                 case eVehicleType.Truck:
-                    (i_Vehicle as Truck).SetResponsesForVehicleQueries(i_userResponses);
+                    (i_Vehicle as Truck).SetResponsesForVehicleQueries(i_UserResponses);
                     break;
             }
         }

@@ -128,7 +128,7 @@ namespace Ex03.GarageLogic
 
             if(!int.TryParse(i_QueriesResponses[1], out o_CargoCapacity))
             {
-                exception = new FormatException("Format For Truck Cargo Is Wrong. Enter Again: ");
+                exception = new FormatException("Format OF Truck Cargo Is Wrong. Enter Again: ");
                 exception.Source = "1";
             }
 

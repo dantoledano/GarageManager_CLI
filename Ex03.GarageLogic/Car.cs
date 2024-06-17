@@ -119,22 +119,22 @@ namespace Ex03.GarageLogic
 
             if (!int.TryParse(i_userResponses[1], out o_NumberOfDoors))
             {
-                exception = new FormatException("Invalid format of input of the number of doors, please try again: ");
+                exception = new FormatException("Invalid Input Format of The Number of Doors, Try Again: ");
                 exception.Source = "1";
             }
             else if (ValueOutOfRangeException.IsValueOutOfRange(o_NumberOfDoors, 2, 5))
             {
-                exception = new ValueOutOfRangeException(2, 5, "Number of doors for car is out of range, please try again (Choose a number between 2-5): ", exception);
+                exception = new ValueOutOfRangeException(2, 5, "Number of Doors For Car Is Out of Range, Try Again (Choose a Number Between 2-5): ", exception);
                 exception.Source = "1";
             }
             if (!int.TryParse(i_userResponses[0], out o_ColorPicked))
             {
-                exception = new FormatException("Format of input of the color isn't valid, please try again: ");
+                exception = new FormatException("Invalid Input Format of The Car's Color, Try again: ");
                 exception.Source = "0";
             }
             else if (ValueOutOfRangeException.IsValueOutOfRange(o_ColorPicked, 1, 4))
             {
-                exception = new ValueOutOfRangeException(1, 4, "Color choice for the car is out of range, please try again: ", exception);
+                exception = new ValueOutOfRangeException(1, 4, "Color Choice For The Car is Out Of Range, Try Again: ", exception);
                 exception.Source = "0";
             }
 

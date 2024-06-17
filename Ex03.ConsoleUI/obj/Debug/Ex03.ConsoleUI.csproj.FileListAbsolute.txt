@@ -9,3 +9,14 @@ C:\Users\roisolomon\source\repos\GarageManagerCLI\Ex03.ConsoleUI\bin\Debug\Ex03.
 C:\Users\roisolomon\source\repos\GarageManagerCLI\Ex03.ConsoleUI\obj\Debug\Ex03.Con.97A6B4C2.Up2Date
 C:\Users\roisolomon\source\repos\GarageManagerCLI\Ex03.ConsoleUI\obj\Debug\Ex03.ConsoleUI.exe
 C:\Users\roisolomon\source\repos\GarageManagerCLI\Ex03.ConsoleUI\obj\Debug\Ex03.ConsoleUI.pdb
+C:\Users\Dan Toledano\Documents\GitHub\GarageManagerCLI\Ex03.ConsoleUI\bin\Debug\Ex03.ConsoleUI.exe.config
+C:\Users\Dan Toledano\Documents\GitHub\GarageManagerCLI\Ex03.ConsoleUI\bin\Debug\Ex03.ConsoleUI.exe
+C:\Users\Dan Toledano\Documents\GitHub\GarageManagerCLI\Ex03.ConsoleUI\bin\Debug\Ex03.ConsoleUI.pdb
+C:\Users\Dan Toledano\Documents\GitHub\GarageManagerCLI\Ex03.ConsoleUI\bin\Debug\Ex03.GarageLogic.dll
+C:\Users\Dan Toledano\Documents\GitHub\GarageManagerCLI\Ex03.ConsoleUI\bin\Debug\Ex03.GarageLogic.pdb
+C:\Users\Dan Toledano\Documents\GitHub\GarageManagerCLI\Ex03.ConsoleUI\bin\Debug\Ex03.GarageLogic.dll.config
+C:\Users\Dan Toledano\Documents\GitHub\GarageManagerCLI\Ex03.ConsoleUI\obj\Debug\Ex03.ConsoleUI.csproj.AssemblyReference.cache
+C:\Users\Dan Toledano\Documents\GitHub\GarageManagerCLI\Ex03.ConsoleUI\obj\Debug\Ex03.ConsoleUI.csproj.CoreCompileInputs.cache
+C:\Users\Dan Toledano\Documents\GitHub\GarageManagerCLI\Ex03.ConsoleUI\obj\Debug\Ex03.Con.97A6B4C2.Up2Date
+C:\Users\Dan Toledano\Documents\GitHub\GarageManagerCLI\Ex03.ConsoleUI\obj\Debug\Ex03.ConsoleUI.exe
+C:\Users\Dan Toledano\Documents\GitHub\GarageManagerCLI\Ex03.ConsoleUI\obj\Debug\Ex03.ConsoleUI.pdb

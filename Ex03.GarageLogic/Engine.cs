@@ -136,14 +136,26 @@ namespace Ex03.GarageLogic
 
             public float BatteryCapacity
             {
-                get { return m_BatteryCapacity; }
-                set { m_BatteryCapacity = value; }
+                get
+                {
+                    return m_BatteryCapacity;
+                }
+                set
+                {
+                    m_BatteryCapacity = value;
+                }
             }
 
             public float BatteryTimeLeft
             {
-                get { return m_BatteryTimeLeft; }
-                set { m_BatteryTimeLeft = value; }
+                get
+                {
+                    return m_BatteryTimeLeft;
+                }
+                set
+                {
+                    m_BatteryTimeLeft = value;
+                }
             }
 
 
@@ -164,7 +176,7 @@ namespace Ex03.GarageLogic
                         if (m_BatteryTimeLeft == m_BatteryCapacity)
                         {
                             string errorMessageForBatteryIsFull = string.Format(
-                                "Battery Is Full Already! Currently has {0}",
+                                "Battery Is Already Full! Currently Has {0}",
                                 BatteryCapacity);
                             throw new ValueOutOfRangeException(0, BatteryCapacity, errorMessageForBatteryIsFull);
                         }
@@ -172,7 +184,7 @@ namespace Ex03.GarageLogic
                         {
                             float currentAmountOfBatteryForErrorMessage = BatteryTimeLeft;
                             string errorMessageForUserExceedingCharingMax = string.Format(
-                                "Maximum charge exceeded ! Currently Your Vehicle Has {0} Of Battery",
+                                "Maximum Charge Exceeded ! Currently Your Vehicle Has {0} Of Battery",
                                 currentAmountOfBatteryForErrorMessage);
                             throw new ValueOutOfRangeException(0, BatteryCapacity, errorMessageForUserExceedingCharingMax);
                         }

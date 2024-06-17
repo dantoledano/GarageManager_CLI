@@ -245,16 +245,11 @@ namespace Ex03.GarageLogic
             //vehicleInformation.AppendLine();
             //vehicleInformation.AppendLine("Wheels:");
             //vehicleInformation.AppendLine("-------");
-
-            //for (int i = 0; i < r_Wheels.Count; i++)
-            //{
-            //    vehicleInformation.AppendLine($"{i + 1}. {r_Wheels[i]}");
-            //}
-
+            //vehicleInformation.AppendLine($"{Wheels[0]}");
             //vehicleInformation.AppendLine();
             //vehicleInformation.AppendLine("Engine Information:");
             //vehicleInformation.AppendLine("-------------------");
-            //vehicleInformation.AppendLine(m_Engine.ToString());
+            //vehicleInformation.AppendLine(Engine.ToString());
 
             return vehicleInformation.ToString();
         }

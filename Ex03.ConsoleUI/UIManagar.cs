@@ -41,21 +41,21 @@ namespace Ex03.ConsoleUI
             menu.AppendLine(border);
 
             Console.ForegroundColor = ConsoleColor.White; 
-            menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Put your vehicle in the garage."));
-            menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Display all license plates of vehicles in the garage."));
-            menu.AppendLine(string.Format("{0, -2} {1}", "3.", "Update the status of a vehicle in the garage."));
-            menu.AppendLine(string.Format("{0, -2} {1}", "4.", "Inflate wheels of a chosen vehicle to the maximum capacity."));
-            menu.AppendLine(string.Format("{0, -2} {1}", "5.", "Fuel a vehicle."));
-            menu.AppendLine(string.Format("{0, -2} {1}", "6.", "Charge a vehicle."));
-            menu.AppendLine(string.Format("{0, -2} {1}", "7.", "Show all the information of a vehicle by license plate number."));
-            menu.AppendLine(string.Format("{0, -2} {1}", "8.", "Exit garage."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Put Your Vehicle in The Garage."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Display All License Numbers of Vehicles in The Garage."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "3.", "Update The Status of a Vehicle In The Garage."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "4.", "Inflate Wheels of a Chosen Vehicle To The Maximum Capacity."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "5.", "Fuel a Vehicle."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "6.", "Charge a Vehicle."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "7.", "Display Vehicle Information by License Number"));
+            menu.AppendLine(string.Format("{0, -2} {1}", "8.", "Exit Garage."));
 
             menu.AppendLine(border);
 
             Console.Write(menu.ToString());
 
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("Enter your choice here: ");
+            printInputRequest();
 
             Console.ResetColor();
         }
@@ -81,7 +81,7 @@ namespace Ex03.ConsoleUI
             Console.ForegroundColor = ConsoleColor.White; 
             Console.Write(menu.ToString());
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.Write("Enter Your Choice: ");
+            printInputRequest();
             Console.ResetColor(); 
         }
 
@@ -96,15 +96,15 @@ namespace Ex03.ConsoleUI
             menu.AppendLine(border);
             menu.AppendLine(title);
             menu.AppendLine(border);
-            menu.AppendLine("Displaying license plates using the following filter:\n");
-            menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Filter by current state in the garage."));
-            menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Don't use filtering."));
+            menu.AppendLine("Displaying License Numbers Using The Following Filter:\n");
+            menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Filter by Current Status in The Garage."));
+            menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Don't Use Filtering."));
             menu.AppendLine(border);
 
             Console.ForegroundColor = ConsoleColor.White; 
             Console.Write(menu.ToString());
             Console.ForegroundColor = ConsoleColor.DarkCyan; 
-            Console.Write("Enter Your Choice: ");
+            printInputRequest();
             Console.ResetColor(); 
             int userChoice = (int)getAndValidateInputFromUserInRange(1, 2);
 
@@ -132,7 +132,7 @@ namespace Ex03.ConsoleUI
             Console.ForegroundColor = ConsoleColor.White; 
             Console.Write(menu.ToString());
             Console.ForegroundColor = ConsoleColor.DarkCyan; 
-            Console.Write("Enter Your Choice: ");
+            printInputRequest();
             Console.ResetColor(); 
         }
 
@@ -146,7 +146,7 @@ namespace Ex03.ConsoleUI
                    ValueOutOfRangeException.IsValueOutOfRange(userInputNumerical, i_MinValue, i_MaxValue))
             {
                 string messageOutOfRange =
-                    string.Format("Your Choice is out of range ! Enter input again in the range {0} - {1}:",
+                    string.Format("Your Choice is out of range! Enter input again in the range {0} - {1}:",
                         i_MinValue, i_MaxValue);
                 Console.WriteLine(messageOutOfRange);
                 userInputChoice = Console.ReadLine();
@@ -196,7 +196,7 @@ namespace Ex03.ConsoleUI
         
         private void displayVehicleInformation(Garage i_Garage)
         {
-            Console.WriteLine("Printing vehicle information from the garage by license number:" + Environment.NewLine);
+            Console.WriteLine("Display Vehicle Information From The Garage By License Number:" + Environment.NewLine);
             int userChoice = 1;
 
             while (userChoice == 1)
@@ -228,7 +228,7 @@ namespace Ex03.ConsoleUI
 
             if (i_Garage.VehiclesOfGarage.TryGetValue(licenseNumber, out VehicleStatusAndOwnerDetails))
             {
-                Console.WriteLine("The Entered License Number Already Exist. Status Changed To - In Repair.");
+                Console.WriteLine("The Entered License Number Already Exist. Status Changed To - Under Repair.");
                 VehicleStatusAndOwnerDetails.VehicleStatus = Garage.VehicleStatusAndOwnerDetails.eVehicleGarageStatus.UnderRepair;
             }
             else
@@ -255,7 +255,7 @@ namespace Ex03.ConsoleUI
             if(i_EngineType == Engine.eEngineType.Fuel)
             {
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Please Enter Which Octan You'd Like:");
+                Console.WriteLine("Enter Which Octan You'd Like:");
                 displayFuelMenu();
                 o_FuelChoice = (int)getAndValidateInputFromUserInRange(1, 4);
                 
@@ -302,6 +302,11 @@ namespace Ex03.ConsoleUI
             return userInput;
         }
 
+        private void printInputRequest()
+        {
+            Console.Write("Enter Your Choice: ");
+        }
+
 /*
         private string getAndValidateStringOfChars()
         {
@@ -345,7 +350,7 @@ namespace Ex03.ConsoleUI
 
             while (!int.TryParse(userInput, out numberUserInput) || numberUserInput < 1)
             {
-                Console.WriteLine("Enter Positive Number. Try Again: ");
+                Console.WriteLine("Enter a Positive Number. Try Again: ");
                 userInput = Console.ReadLine();
             }
 
@@ -412,8 +417,8 @@ namespace Ex03.ConsoleUI
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Enter Your name:");
-            o_OwnerName = this.getAndValidateStringInputOfDigitsAndLetters("Name Format Invalid. Try Again");
-            o_OwnerPhoneNumber = this.getAndValidatePositiveNumberInput("Enter your phone number: ").ToString();
+            o_OwnerName = this.getAndValidateStringInputOfDigitsAndLetters("Invalid Name Format. Try Again");
+            o_OwnerPhoneNumber = this.getAndValidatePositiveNumberInput("Enter Your Phone Number: ").ToString();
         }
 
         private void correctAndSetVehicleInformation(ref Vehicle io_Vehicle, VehicleAllocator.eVehicleType i_TypeOfVehicle)
@@ -580,7 +585,7 @@ Enter Your Choice: ");
                     askForFuelOctanAndFuelAmountToFill(out int userFuelTypeChoice, out float quantityToFuelOrCharge, i_EngineType);
                     i_Garage.FuelOrChargeVehicle(i_EngineType, licenseNumber, quantityToFuelOrCharge, (Engine.FuelBasedEngine.eFuelOctan)userFuelTypeChoice, vehicleToPowerUp);
                     userMenuChoice = 2;
-                    Console.WriteLine("Engine of vehicle succesfully filled up!");
+                    Console.WriteLine("Engine of Vehicle Successfully Filled Up!");
                     displayBackToMenuOption();
                     break;
                 }
@@ -592,7 +597,7 @@ Enter Your Choice: ");
                 {
                     if (exception.MinValue != exception.MaxValue)
                     {
-                        Console.WriteLine("Value ranges are {0} to {1}", exception.MinValue, exception.MaxValue);
+                        Console.WriteLine("Value Ranges Are {0} to {1}", exception.MinValue, exception.MaxValue);
                     }
                 }
                 catch (ArgumentException exception)
@@ -614,7 +619,7 @@ Enter Your Choice: ");
                 Console.Write('.');
             }
             Console.WriteLine("");
-            Console.WriteLine("Garage Is Closed. Have A Great Day !");
+            Console.WriteLine("Garage Is Closed. Have A Great Day!");
             o_IsGargeOpen = false;
         }
 

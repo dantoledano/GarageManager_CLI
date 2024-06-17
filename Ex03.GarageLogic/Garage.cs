@@ -64,11 +64,11 @@ namespace Ex03.GarageLogic
                     {
                         if(i_EngineType == Engine.eEngineType.Fuel)
                         {
-                            throw new ArgumentException("You have requested to refuel the vehicle, but the garage has identified it as an electric car.");
+                            throw new ArgumentException("You Have Requested To Refuel The Vehicle, But The Garage Has Identified It As An Electric Car.");
                         }
                         else
                         {
-                            throw new ArgumentException("You have requested to charge the vehicle, but the garage has identified it as a fuel powered car");
+                            throw new ArgumentException("You Have Requested To Charge The Vehicle, But The Garage Has Identified It As A Fuel Powered Car");
                         }
                     }
                 }
@@ -96,7 +96,7 @@ namespace Ex03.GarageLogic
             else
             {
                 ArgumentException exception =
-                    new ArgumentException("Sorry, There is no a vehicle with this license number in our garage");
+                    new ArgumentException("Sorry, There Is No a Vehicle With This License Number In Our Garage");
                 throw exception;
             }
         }

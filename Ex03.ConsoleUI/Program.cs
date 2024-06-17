@@ -11,6 +11,7 @@ namespace Ex03.ConsoleUI
         public static void Main(string[] args)
         {
             UIManagar garageUI = new UIManagar();
+
             garageUI.InitilizeUIManager();
         }
     }

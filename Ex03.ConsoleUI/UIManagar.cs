@@ -261,31 +261,45 @@ namespace Ex03.ConsoleUI
             o_FuelAmountToAdd = getAndValidateInputFromUserInRange(0, 120);
         }
 
-        private string getAndValidateStringInputOfDigitsAndLetters()
+        //private string getAndValidateStringInputOfDigitsAndLetters()
+        //{
+        //    string userInput = Console.ReadLine();
+        //    bool isInvalidString = true;
+
+        //    while(isInvalidString)
+        //    {
+        //        isInvalidString = false;
+        //        foreach (char currentChar in userInput)
+        //        {
+        //            if(!char.IsDigit(currentChar) && !char.IsLetter(currentChar))
+        //            {
+        //                Console.WriteLine("Your input must be letters and numbers only. Try Again: ");
+        //                userInput = Console.ReadLine();
+        //                isInvalidString = true;
+        //                break;
+        //            }
+        //        }
+        //    }
+
+        //    return userInput;
+        //}
+
+        private string getAndValidateStringInputOfDigitsAndLetters(string i_ErrorMessage)
         {
             string userInput = Console.ReadLine();
-            bool isInvalidString = true;
 
-            while(isInvalidString)
+            while (string.IsNullOrWhiteSpace(userInput))
             {
-                isInvalidString = false;
-                foreach (char currentChar in userInput)
-                {
-                    if(!char.IsDigit(currentChar) && !char.IsLetter(currentChar))
-                    {
-                        Console.WriteLine("Your input must be letters and numbers only. Try Again: ");
-                        userInput = Console.ReadLine();
-                        isInvalidString = true;
-                        break;
-                    }
-                }
+                Console.WriteLine(i_ErrorMessage);
+                userInput = Console.ReadLine();
+
             }
 
             return userInput;
         }
 
-
-        private string getAndValidateStringOfChars(string i_Message)
+/*
+        private string getAndValidateStringOfChars()
         {
             bool isStringValid = false;
             Console.Write(i_Message);
@@ -309,7 +323,7 @@ namespace Ex03.ConsoleUI
 
             return userString;
         }
-
+*/
         private void displayBackToMenuOption()
         {
             Console.ResetColor();
@@ -338,7 +352,7 @@ namespace Ex03.ConsoleUI
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Enter The License Number Of The Vehicle: ");
-            string licenseNumber = getAndValidateStringInputOfDigitsAndLetters();
+            string licenseNumber = getAndValidateStringInputOfDigitsAndLetters("License Number Format Invalid. Try Again.");
 
             return licenseNumber;
         }
@@ -358,10 +372,10 @@ namespace Ex03.ConsoleUI
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Enter The Model Name: ");
-            i_Vehicle.ModelName = getAndValidateStringInputOfDigitsAndLetters();
+            i_Vehicle.ModelName = getAndValidateStringInputOfDigitsAndLetters("Model Name Format Invalid. Try Again.");
 
             Console.Write("Enter Wheels Manufacturer Name: ");
-            manufactorName = getAndValidateStringInputOfDigitsAndLetters();
+            manufactorName = getAndValidateStringInputOfDigitsAndLetters("Manufacturer Name Invalid. Try Again. ");
 
             Console.Write("Enter Wheels Remaining Air Pressure: ");
             currentAirPressure = getAndValidateInputFromUserInRange(0, (int)i_Vehicle.Wheels.First().MaxAirPressure);
@@ -393,7 +407,8 @@ namespace Ex03.ConsoleUI
             private void getVehicleOwnerData(out string o_OwnerName, out string o_OwnerPhoneNumber)
         {
             Console.ForegroundColor = ConsoleColor.White;
-            o_OwnerName = this.getAndValidateStringOfChars("Enter Your name: ");
+            Console.WriteLine("Enter Your name:");
+            o_OwnerName = this.getAndValidateStringInputOfDigitsAndLetters("Name Format Invalid. Try Again");
             o_OwnerPhoneNumber = this.getAndValidatePositiveNumberInput("Enter your phone number: ").ToString();
         }
 
@@ -538,7 +553,7 @@ Choice: ");
 
         private int showBadInputMessageTryAgainAndGetMenu()
         {
-            Console.WriteLine(@"Bad Input. Choose From The Following Options: 
+            Console.WriteLine(@"Choose From The Following Options: 
 
 1. Enter Input 
 2. Back To Menu
@@ -557,10 +572,11 @@ Enter Your Choice: ");
                 try
                 {
                     string licenseNumber = getVehicleLicenseNumberFromUser();
-                    this.askForFuelOctanAndFuelAmountToFill(out int userFuelTypeChoice, out float quantityToFuelOrCharge, i_EngineType);
-                    i_Garage.FuelOrChargeVehicle(i_EngineType, licenseNumber, quantityToFuelOrCharge, (Engine.FuelBasedEngine.eFuelOctan)userFuelTypeChoice);
+                    Garage.VehicleStatusAndOwnerDetails vehicleToPowerUp = i_Garage.GetVehicleByLicenceNumber(licenseNumber);
+                    askForFuelOctanAndFuelAmountToFill(out int userFuelTypeChoice, out float quantityToFuelOrCharge, i_EngineType);
+                    i_Garage.FuelOrChargeVehicle(i_EngineType, licenseNumber, quantityToFuelOrCharge, (Engine.FuelBasedEngine.eFuelOctan)userFuelTypeChoice, vehicleToPowerUp);
                     userMenuChoice = 2;
-                    Console.WriteLine("Engine of vehicle succesfully filled up");
+                    Console.WriteLine("Engine of vehicle succesfully filled up!");
                     displayBackToMenuOption();
                     break;
                 }
@@ -570,8 +586,6 @@ Enter Your Choice: ");
                 }
                 catch (ValueOutOfRangeException exception)
                 {
-                    Console.WriteLine(exception.Message);
-
                     if (exception.MinValue != exception.MaxValue)
                     {
                         Console.WriteLine("Value ranges are {0} to {1}", exception.MinValue, exception.MaxValue);
@@ -582,7 +596,7 @@ Enter Your Choice: ");
                     Console.WriteLine(exception.Message);
                 }
 
-                userMenuChoice = this.showBadInputMessageTryAgainAndGetMenu();
+                userMenuChoice = showBadInputMessageTryAgainAndGetMenu();
             }
         }
 

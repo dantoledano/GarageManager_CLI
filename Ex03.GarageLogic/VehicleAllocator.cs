@@ -27,7 +27,7 @@ namespace Ex03.GarageLogic
             switch (i_TypeOfVehicle)
             {
                 case eVehicleType.FueledMotorCycle:
-                    newEngine = new Engine.FuelBasedEngine((float)5.5, Engine.FuelBasedEngine.eFuelOctan.Octan95);
+                    newEngine = new Engine.FuelBasedEngine((float)5.5, Engine.FuelBasedEngine.eFuelOctan.Octan98);
                     newVehicle = new Motorcycle(newEngine, i_LicenseNumber);
                     break;
                 case eVehicleType.ElectricMotorcycle:
@@ -35,7 +35,7 @@ namespace Ex03.GarageLogic
                     newVehicle = new Motorcycle(newEngine, i_LicenseNumber);
                     break;
                 case eVehicleType.FueledCar:
-                    newEngine = new Engine.FuelBasedEngine((float)45, Engine.FuelBasedEngine.eFuelOctan.Octan96);
+                    newEngine = new Engine.FuelBasedEngine((float)45, Engine.FuelBasedEngine.eFuelOctan.Octan95);
                     newVehicle = new Car(newEngine, i_LicenseNumber);
                     break;
                 case eVehicleType.ElectricCar:

@@ -56,10 +56,16 @@ namespace Ex03.GarageLogic
             }
             /* END - Getters & Setters */
 
-            public void Refuel(float i_AmountToFuel)
+            public void Refuel(float i_AmountToFuel, eFuelOctan i_FuelType)
             {
+
+
                 try
                 {
+                    if(i_FuelType != this.FuelOctan)
+                    {
+                        throw new ArgumentException("Type Of Fuel Is Not Matching! Try Again.");
+                    }
                     m_FuelLeft += i_AmountToFuel;
 
                     if (i_AmountToFuel < 0)
@@ -72,13 +78,22 @@ namespace Ex03.GarageLogic
                         m_FuelLeft -= i_AmountToFuel;
                         if (m_FuelLeft == MaxAmountOfFuel)
                         {
-                            throw new ValueOutOfRangeException(0, MaxAmountOfFuel, "Tank Is Full Already !");
+                            string errorMessageForTankIsFull = string.Format(
+                                "Tank Is Full Already! Currently has {0}",
+                                MaxAmountOfFuel);
+                            throw new ValueOutOfRangeException(0, MaxAmountOfFuel, errorMessageForTankIsFull);
                         }
                         else
                         {
-                            throw new ValueOutOfRangeException(0, MaxAmountOfFuel, "Maximum fuel exceeded !");
+                            float currentAmountOfFuelForErrorMessage = FuelLeft;
+                            string errorMessageForUserExceedingAmountOfFuel = string.Format(
+                                "Maximum fuel exceeded ! Currently Your Vehicle Has {0} Of Fuel",
+                                currentAmountOfFuelForErrorMessage);
+                            throw new ValueOutOfRangeException(0, MaxAmountOfFuel, errorMessageForUserExceedingAmountOfFuel);
                         }
                     }
+                    string currentAmountOfFuelAfterRefueling = string.Format("Current Amount Of Fuel: {0}", FuelLeft);
+                    Console.WriteLine(currentAmountOfFuelAfterRefueling);
                 }
 
                 catch (ValueOutOfRangeException exception)
@@ -89,7 +104,6 @@ namespace Ex03.GarageLogic
                 }
             }
 
-            // check if the getters and setter don't mess things
             public override string ToString()
             {
                 StringBuilder information = new StringBuilder();
@@ -148,13 +162,22 @@ namespace Ex03.GarageLogic
                         m_BatteryTimeLeft -= i_AmountToCharge;
                         if (m_BatteryTimeLeft == m_BatteryCapacity)
                         {
-                            throw new ValueOutOfRangeException(0, BatteryCapacity, "Battery Is Full Already !");
+                            string errorMessageForBatteryIsFull = string.Format(
+                                "Battery Is Full Already! Currently has {0}",
+                                BatteryCapacity);
+                            throw new ValueOutOfRangeException(0, BatteryCapacity, errorMessageForBatteryIsFull);
                         }
                         else
                         {
-                            throw new ValueOutOfRangeException(0, BatteryCapacity, "Maximum Charge Exceeded !");
+                            float currentAmountOfBatteryForErrorMessage = BatteryTimeLeft;
+                            string errorMessageForUserExceedingCharingMax = string.Format(
+                                "Maximum charge exceeded ! Currently Your Vehicle Has {0} Of Battery",
+                                currentAmountOfBatteryForErrorMessage);
+                            throw new ValueOutOfRangeException(0, BatteryCapacity, errorMessageForUserExceedingCharingMax);
                         }
                     }
+                    string currentAmountOfBatteryAfterCharging = string.Format("Current Amount Of Battery: {0}", BatteryTimeLeft);
+                    Console.WriteLine(currentAmountOfBatteryAfterCharging);
                 }
 
                 catch (ValueOutOfRangeException ex)

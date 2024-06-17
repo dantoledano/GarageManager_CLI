@@ -43,39 +43,39 @@ namespace Ex03.GarageLogic
             Engine.eEngineType i_EngineType,
             string i_LicenseNumber,
             float i_QuantityToFill,
-            Engine.FuelBasedEngine.eFuelOctan i_FuelType)
+            Engine.FuelBasedEngine.eFuelOctan i_FuelType, Garage.VehicleStatusAndOwnerDetails i_VehicleToFillEngine)
         {
             try
             {
-                VehicleStatusAndOwnerDetails vehicleToFillEngine = GetVehicleByLicenceNumber(i_LicenseNumber);
+                //VehicleStatusAndOwnerDetails vehicleToFillEngine = GetVehicleByLicenceNumber(i_LicenseNumber);
 
-                if(vehicleToFillEngine != null)
+                if(i_VehicleToFillEngine != null)
                 {
-                    if(i_EngineType == Engine.eEngineType.Fuel && vehicleToFillEngine.OwnerVehicle.Engine is Engine.FuelBasedEngine)
+                    if(i_EngineType == Engine.eEngineType.Fuel && i_VehicleToFillEngine.OwnerVehicle.Engine is Engine.FuelBasedEngine)
                     {
-                        (vehicleToFillEngine.OwnerVehicle.Engine as Engine.FuelBasedEngine).Refuel(i_QuantityToFill); //לבדוק אם צריך לשלוח גם סוג דלק
+                        (i_VehicleToFillEngine.OwnerVehicle.Engine as Engine.FuelBasedEngine).Refuel(i_QuantityToFill, i_FuelType); 
                     }
                     else if(i_EngineType == Engine.eEngineType.Battery
-                            && vehicleToFillEngine.OwnerVehicle.Engine is Engine.ElectricBasedEngine)
+                            && i_VehicleToFillEngine.OwnerVehicle.Engine is Engine.ElectricBasedEngine)
                     {
-                        (vehicleToFillEngine.OwnerVehicle.Engine as Engine.ElectricBasedEngine).ChargeBattery(i_QuantityToFill);
+                        (i_VehicleToFillEngine.OwnerVehicle.Engine as Engine.ElectricBasedEngine).ChargeBattery(i_QuantityToFill);
                     }
                     else
                     {
                         if(i_EngineType == Engine.eEngineType.Fuel)
                         {
-                            throw new ArgumentException("לחשוב על טקסט מתאים-דלק");
+                            throw new ArgumentException("You have requested to refuel the vehicle, but the garage has identified it as an electric car.");
                         }
                         else
                         {
-                            throw new ArgumentException("לחשוב על טקסט מתאים-חשמלי");
+                            throw new ArgumentException("You have requested to charge the vehicle, but the garage has identified it as a fuel powered car");
                         }
                     }
                 }
             }
-            catch(ValueOutOfRangeException exeption)
+            catch(ValueOutOfRangeException exception)
             {
-                throw exeption;
+                throw exception;
             }
             catch(ArgumentException exception)
             {

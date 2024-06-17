@@ -11,9 +11,6 @@ namespace Ex03.GarageLogic
         
             private float m_MinValue;
             private float m_MaxValue;
-
-
-
             /* BEGIN - Getters & Setters */
 
             public float MinValue
@@ -40,7 +37,6 @@ namespace Ex03.GarageLogic
                 }
             }
             /* END - Getters & Setters */
-
 
             public ValueOutOfRangeException(float i_MinValue, float i_MaxValue, string i_MessageOfException,
                                             Exception i_Exception = null) : base(i_MessageOfException, i_Exception)

@@ -51,27 +51,16 @@ namespace Ex03.GarageLogic
         {
             StringBuilder vehicleInformation = new StringBuilder();
 
-            vehicleInformation.AppendFormat("Vehicle Information:\n");
-            vehicleInformation.AppendFormat("=====================\n");
-            vehicleInformation.AppendFormat("License Number: {0}\n", LicenseNumber);
-            vehicleInformation.AppendFormat("Model Name: {0}\n", ModelName);
-            vehicleInformation.AppendFormat("\n");
+            vehicleInformation.Append(base.ToString());
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            vehicleInformation.AppendFormat("Truck Attributes:\n");
+            vehicleInformation.AppendFormat("=================\n");
+            Console.ForegroundColor = ConsoleColor.White;
             vehicleInformation.AppendFormat("Transporting Toxins: {0}\n", IsTransportingToxins);
-            vehicleInformation.AppendFormat("Cargo Capacity: {0}\n", CargoCapacity);
-            vehicleInformation.AppendFormat("\n");
-
-            vehicleInformation.AppendFormat("Wheels:\n");
-            vehicleInformation.AppendFormat("-------\n");
-            vehicleInformation.AppendFormat("{0}\n", Wheels[0].ToString());
-
-            vehicleInformation.AppendFormat("\n");
-            vehicleInformation.AppendFormat("Engine Information:\n");
-            vehicleInformation.AppendFormat("-------------------\n");
-            vehicleInformation.AppendFormat("{0}\n", Engine.ToString());
+            vehicleInformation.AppendFormat("Cargo Capacity: {0}", CargoCapacity);
 
             return vehicleInformation.ToString();
         }
-
 
         public override List<string> SetVehicleQueriesList()
         {
@@ -132,8 +121,7 @@ namespace Ex03.GarageLogic
                 exception.Source = "1";
             }
 
-            // No maximum of cargo capacity were mentioned
-            else if(o_CargoCapacity < 0 || o_CargoCapacity > 9999999)
+            else if(o_CargoCapacity < 0 || o_CargoCapacity > 9999999)// No maximum of cargo capacity were mentioned
             {
                 exception = new ValueOutOfRangeException(1, 9999999, "Out Of Range Cargo Capacity");
                 exception.Source = "1";

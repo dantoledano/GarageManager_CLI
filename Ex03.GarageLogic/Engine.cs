@@ -8,13 +8,11 @@ namespace Ex03.GarageLogic
 {
     public abstract class Engine
     {
-
         public enum eEngineType
         {
             Battery,
             Fuel
         }
-
 
         public class FuelBasedEngine : Engine
         {
@@ -27,47 +25,63 @@ namespace Ex03.GarageLogic
             }
 
             private float m_FuelLeft;
-            private eFuelOctan e_FuelOctan;
+            private eFuelOctan m_FuelOctan;
             private float m_MaxAmountOfFuel;
 
             public FuelBasedEngine(float i_MaxAmountOfFuel, eFuelOctan i_FuelOctan)
             {
                 m_MaxAmountOfFuel = i_MaxAmountOfFuel;
-                e_FuelOctan = i_FuelOctan;
+                m_FuelOctan = i_FuelOctan;
             }
 
             /* BEGIN - Getters & Setters */
             public float FuelLeft
             {
-                get { return m_FuelLeft; }
-                set { m_FuelLeft = value; }
+                get
+                {
+                    return m_FuelLeft;
+                }
+                set
+                {
+                    m_FuelLeft = value;
+                }
             }
 
             public float MaxAmountOfFuel
             {
-                get { return m_MaxAmountOfFuel; }
-                set { m_MaxAmountOfFuel = value; }
+                get
+                {
+                    return m_MaxAmountOfFuel;
+                }
+                set
+                {
+                    m_MaxAmountOfFuel = value;
+                }
             }
 
             public eFuelOctan FuelOctan
             {
-                get { return e_FuelOctan; }
-                set { e_FuelOctan = value; }
+                get
+                {
+                    return m_FuelOctan;
+                }
+                set
+                {
+                    m_FuelOctan = value;
+                }
             }
             /* END - Getters & Setters */
 
             public void Refuel(float i_AmountToFuel, eFuelOctan i_FuelType)
             {
-
-
                 try
                 {
                     if(i_FuelType != this.FuelOctan)
                     {
                         throw new ArgumentException("Type Of Fuel Is Not Matching! Try Again.");
                     }
-                    m_FuelLeft += i_AmountToFuel;
 
+                    m_FuelLeft += i_AmountToFuel;
                     if (i_AmountToFuel < 0)
                     {
                         throw new ValueOutOfRangeException(0, MaxAmountOfFuel, "Fuel Amount Cannot Be Negative");
@@ -92,10 +106,10 @@ namespace Ex03.GarageLogic
                             throw new ValueOutOfRangeException(0, MaxAmountOfFuel, errorMessageForUserExceedingAmountOfFuel);
                         }
                     }
+
                     string currentAmountOfFuelAfterRefueling = string.Format("Current Amount Of Fuel: {0}", FuelLeft);
                     Console.WriteLine(currentAmountOfFuelAfterRefueling);
                 }
-
                 catch (ValueOutOfRangeException exception)
                 {
                     string errorMessage = string.Format("Error: {0}", exception.Message);
@@ -109,16 +123,13 @@ namespace Ex03.GarageLogic
                 StringBuilder information = new StringBuilder();
 
                 information.AppendFormat("Fuel Engine:\n");
-                information.AppendFormat("============\n");
+                information.AppendFormat("------------\n");
                 information.AppendFormat("Tank Capacity: {0}\n", MaxAmountOfFuel);
                 information.AppendFormat("Remaining Fuel: {0}\n", FuelLeft);
 
                 return information.ToString();
             }
-
-
         }
-
         /* END -  FuelBasedEngine Class */
 
         /* START - ElectricBasedEngine Class */
@@ -127,11 +138,10 @@ namespace Ex03.GarageLogic
             private float m_BatteryTimeLeft;
             private float m_BatteryCapacity;
 
-            public ElectricBasedEngine(float i_BatteryCapacity) : base() // is base is relevant ?
+            public ElectricBasedEngine(float i_BatteryCapacity) : base() 
             {
                 m_BatteryCapacity = i_BatteryCapacity;
             }
-
             /* BEGIN - Getters & Setters */
 
             public float BatteryCapacity
@@ -158,13 +168,11 @@ namespace Ex03.GarageLogic
                 }
             }
 
-
             public void ChargeBattery(float i_AmountToCharge)
             {
                 try
                 {
                     m_BatteryTimeLeft += i_AmountToCharge;
-
                     if (i_AmountToCharge < 0)
                     {
                         throw new ValueOutOfRangeException(0, BatteryCapacity, "Charge Amount Cannot Be Negative");
@@ -189,10 +197,10 @@ namespace Ex03.GarageLogic
                             throw new ValueOutOfRangeException(0, BatteryCapacity, errorMessageForUserExceedingCharingMax);
                         }
                     }
+
                     string currentAmountOfBatteryAfterCharging = string.Format("Current Amount Of Battery: {0}", BatteryTimeLeft);
                     Console.WriteLine(currentAmountOfBatteryAfterCharging);
                 }
-
                 catch (ValueOutOfRangeException ex)
                 {
                     string errorMessage = string.Format("Error: {0}", ex.Message);
@@ -206,16 +214,13 @@ namespace Ex03.GarageLogic
                 StringBuilder information = new StringBuilder();
 
                 information.AppendFormat("Electric Engine:\n");
-                information.AppendFormat("================\n");
+                information.AppendFormat("----------------\n");
                 information.AppendFormat("Capacity Of Battery: {0}\n", m_BatteryCapacity);
                 information.AppendFormat("Battery Time Left: {0}\n", m_BatteryTimeLeft);
 
                 return information.ToString();
             }
-
-
         }
         /* END - ElectricBasedEngine Class */
-
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Ex03.GarageLogic.Car;
 using static Ex03.GarageLogic.Vehicle;
 
 namespace Ex03.GarageLogic
@@ -14,7 +15,6 @@ namespace Ex03.GarageLogic
         private readonly List<Wheel> r_Wheels;
         private float m_PercentagePowerLeft;
         private Engine m_Engine;
-
 
         public Vehicle(string i_LicenseNumber, int i_NumberOfWheels, float i_MaxAirPressureForWheel, Engine i_Engine)
         {
@@ -86,7 +86,7 @@ namespace Ex03.GarageLogic
 
         /* Abstract methods */
         public abstract List<string> SetVehicleQueriesList();
-        public abstract void SetResponsesForVehicleQueries(List<string> queriesResponses);
+        public abstract void SetResponsesForVehicleQueries(List<string> io_QueriesResponses);
 
         public void SetPowerLevelLeft(float i_PowerLevel)
         {
@@ -100,39 +100,50 @@ namespace Ex03.GarageLogic
             }
         }
 
+        //public void SetPowerPercentageLeft()
+        //{
+        //    if(this.Engine is Engine.FuelBasedEngine)
+        //    {
+        //        this.PercentagePowerLeft = ((this.Engine as Engine.FuelBasedEngine).FuelLeft / (this.Engine as Engine.FuelBasedEngine).MaxAmountOfFuel) *100f;
+        //    }
+        //    else
+        //    {
+        //        this.PercentagePowerLeft = ((this.Engine as Engine.ElectricBasedEngine).BatteryTimeLeft / (this.Engine as Engine.ElectricBasedEngine).BatteryCapacity) * 100f;
+        //    }
+        //}
+
         public void SetPowerPercentageLeft()
         {
-            if(this.Engine is Engine.FuelBasedEngine)
+            if (Engine is Engine.FuelBasedEngine fuelEngine)
             {
-                this.PercentagePowerLeft = ((this.Engine as Engine.FuelBasedEngine).FuelLeft / (this.Engine as Engine.FuelBasedEngine).MaxAmountOfFuel) *100f;
+                PercentagePowerLeft = (fuelEngine.FuelLeft / fuelEngine.MaxAmountOfFuel) * (float)100;
             }
-            else
+            else if (Engine is Engine.ElectricBasedEngine electricEngine)
             {
-
-                this.PercentagePowerLeft = ((this.Engine as Engine.ElectricBasedEngine).BatteryTimeLeft / (this.Engine as Engine.ElectricBasedEngine).BatteryCapacity) * 100f;
-
+                PercentagePowerLeft = (electricEngine.BatteryTimeLeft / electricEngine.BatteryCapacity) * (float)100;
             }
         }
-        public void SetVehicleWheels(string i_ManufactorName, float i_CurrentAirPressure)
+
+        public void SetVehicleWheels(string i_ManufacturerName, float i_CurrentAirPressure)
         {
             foreach (Wheel currentWheel in Wheels)
             {
-                currentWheel.ManufactorName = i_ManufactorName;
+                currentWheel.ManufactorName = i_ManufacturerName;
                 currentWheel.RemainingAir = i_CurrentAirPressure;
             }
         }
 
         public void FillTiresToMax()
         {
-            float remaningAirToReachMax = Wheels[0].MaxAirPressure - Wheels[0].RemainingAir;
+            float remainingAirToReachMax = Wheels[0].MaxAirPressure - Wheels[0].RemainingAir;
 
             foreach (Wheel wheel in this.r_Wheels)
             {
                 try
                 {
-                    if (remaningAirToReachMax > 0)
+                    if (remainingAirToReachMax > 0)
                     {
-                        wheel.FillAir(remaningAirToReachMax);
+                        wheel.FillAir(remainingAirToReachMax);
                     }
                     else
                     {
@@ -146,9 +157,7 @@ namespace Ex03.GarageLogic
             }
         }
 
-        /* ------------------------------------------------------------ */
         /* - Class Wheel -  */
-        /* BEGINING */
         public class Wheel
         {
             private readonly float r_MaxAirPressure;
@@ -159,8 +168,6 @@ namespace Ex03.GarageLogic
             {
                 r_MaxAirPressure = i_MaxAirPressure;
             }
-
-
             /* BEGIN - Getters & Setters */
 
             public float MaxAirPressure
@@ -196,7 +203,6 @@ namespace Ex03.GarageLogic
 
             public void FillAir(float i_AmountOfAirToFill)
             {
-
                 try
                 {
                     m_RemainingAir += i_AmountOfAirToFill;
@@ -222,37 +228,33 @@ namespace Ex03.GarageLogic
                 information.AppendFormat("=================={0}", Environment.NewLine);
                 information.AppendFormat("Maximum Air Pressure: {0}{1}", r_MaxAirPressure, Environment.NewLine);
                 information.AppendFormat("Remaining Air Pressure: {0}{1}", m_RemainingAir, Environment.NewLine);
-                information.AppendFormat("Manufacturer Name: {0}{1}", m_ManufactureName, Environment.NewLine);
+                information.AppendFormat("Manufacturer Name: {0}", m_ManufactureName);
 
                 return information.ToString();
             }
-
-
             /* END */
-
-
         }
-
 
         public override string ToString()
         {
-            Console.WriteLine("TEST");
             StringBuilder vehicleInformation = new StringBuilder();
-            //vehicleInformation.AppendLine("Vehicle Information:");
-            //vehicleInformation.AppendLine("=====================");
-            //vehicleInformation.AppendLine($"License Number: {r_LicenseNumber}");
-            //vehicleInformation.AppendLine($"Model Name: {m_ModelName}");
-            //vehicleInformation.AppendLine();
-            //vehicleInformation.AppendLine("Wheels:");
-            //vehicleInformation.AppendLine("-------");
-            //vehicleInformation.AppendLine($"{Wheels[0]}");
-            //vehicleInformation.AppendLine();
-            //vehicleInformation.AppendLine("Engine Information:");
-            //vehicleInformation.AppendLine("-------------------");
-            //vehicleInformation.AppendLine(Engine.ToString());
+
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            vehicleInformation.AppendFormat("Vehicle Information:\n");
+            vehicleInformation.AppendFormat("=====================\n");
+            Console.ForegroundColor = ConsoleColor.White;
+            vehicleInformation.AppendFormat("License Number: {0}\n", LicenseNumber);
+            vehicleInformation.AppendFormat("Model Name: {0}\n", ModelName);
+            vehicleInformation.AppendFormat("\n");
+            vehicleInformation.AppendFormat("{0}\n", Wheels[0].ToString());
+            vehicleInformation.AppendFormat("\n");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            vehicleInformation.AppendFormat("Engine Information:\n");
+            vehicleInformation.AppendFormat("==================\n");
+            Console.ForegroundColor = ConsoleColor.White;
+            vehicleInformation.AppendFormat("{0}\n", Engine.ToString());
 
             return vehicleInformation.ToString();
         }
-
     }
 }

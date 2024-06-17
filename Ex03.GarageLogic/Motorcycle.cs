@@ -58,23 +58,13 @@ namespace Ex03.GarageLogic
         {
             StringBuilder vehicleInformation = new StringBuilder();
 
-            vehicleInformation.AppendFormat("Vehicle Information:\n");
-            vehicleInformation.AppendFormat("=====================\n");
-            vehicleInformation.AppendFormat("License Number: {0}\n", LicenseNumber);
-            vehicleInformation.AppendFormat("Model Name: {0}\n", ModelName);
-            vehicleInformation.AppendFormat("\n");
+            vehicleInformation.AppendFormat(base.ToString());
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            vehicleInformation.AppendFormat("Motorcycle Attributes:\n");
+            vehicleInformation.AppendFormat("======================\n");
+            Console.ForegroundColor = ConsoleColor.White;
             vehicleInformation.AppendFormat("EngineCapacity {0}\n", EngineCapacity);
-            vehicleInformation.AppendFormat("License Type: {0}\n", LicenseType.ToString());
-            vehicleInformation.AppendFormat("\n");
-
-            vehicleInformation.AppendFormat("Wheels:\n");
-            vehicleInformation.AppendFormat("-------\n");
-            vehicleInformation.AppendFormat("{0}\n", Wheels[0].ToString());
-
-            vehicleInformation.AppendFormat("\n");
-            vehicleInformation.AppendFormat("Engine Information:\n");
-            vehicleInformation.AppendFormat("-------------------\n");
-            vehicleInformation.AppendFormat("{0}\n", Engine.ToString());
+            vehicleInformation.AppendFormat("License Type: {0}", LicenseType.ToString());
 
             return vehicleInformation.ToString();
         }
@@ -97,9 +87,9 @@ namespace Ex03.GarageLogic
         }
 
 
-        public override void SetResponsesForVehicleQueries(List<string> queriesResponses)
+        public override void SetResponsesForVehicleQueries(List<string> i_QueriesResponses)
         {
-            Exception exception = checkForThrownExceptionsInResponses(queriesResponses, out int o_LicenseType, out int o_EngineCapacity);
+            Exception exception = checkForThrownExceptionsInResponses(i_QueriesResponses, out int o_LicenseType, out int o_EngineCapacity);
             if(exception != null)
             {
                 throw exception;

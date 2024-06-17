@@ -11,7 +11,6 @@ namespace Ex03.GarageLogic
     public class Garage
     {
         private readonly Dictionary<string, VehicleStatusAndOwnerDetails> r_VehiclesOfGarage;
-
         public Dictionary<string, VehicleStatusAndOwnerDetails> VehiclesOfGarage
         {
             get
@@ -47,8 +46,6 @@ namespace Ex03.GarageLogic
         {
             try
             {
-                //VehicleStatusAndOwnerDetails vehicleToFillEngine = GetVehicleByLicenceNumber(i_LicenseNumber);
-
                 if(i_VehicleToFillEngine != null)
                 {
                     if(i_EngineType == Engine.eEngineType.Fuel && i_VehicleToFillEngine.OwnerVehicle.Engine is Engine.FuelBasedEngine)
@@ -155,7 +152,6 @@ namespace Ex03.GarageLogic
                 UnderRepair,
                 Repaired,
                 Paid,
-                
             }
 
             public VehicleStatusAndOwnerDetails(string i_OwnerName, string i_OwnerPhoneNumber, Vehicle i_Vehicle)
@@ -214,36 +210,22 @@ namespace Ex03.GarageLogic
                 }
             }
 
-            //            public override string ToString()
-            //            {
-            //                StringBuilder vehicleInGarageDetails = new StringBuilder();
-            //                vehicleInGarageDetails.AppendFormat(@"Owner information:
-            //    Owner Name: {0}
-            //    Owner Phone Number: {1}
-            //",
-            //m_OwnerName,
-            //m_OwnerPhoneNumber);
-            //                vehicleInGarageDetails.AppendFormat(this.m_Vehicle.ToString());
-            //                vehicleInGarageDetails.AppendFormat("The Status Of The Vehicle: {0}" + Environment.NewLine, m_VehicleStatus.ToString());
-
-
-            //                return vehicleInGarageDetails.ToString();
-            //            }
-
             public override string ToString()
             {
                 StringBuilder vehicleInGarageDetails = new StringBuilder();
 
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 vehicleInGarageDetails.AppendFormat("Owner Information:\n");
                 vehicleInGarageDetails.AppendFormat("===================\n");
+                Console.ForegroundColor = ConsoleColor.White;
                 vehicleInGarageDetails.AppendFormat("Owner Name: {0}\n", m_OwnerName);
-                vehicleInGarageDetails.AppendFormat("Owner Phone Number: {0}\n\n", m_OwnerPhoneNumber);
-
-                vehicleInGarageDetails.AppendFormat("----------------\n");
+                vehicleInGarageDetails.AppendFormat("Owner Phone Number: {0}\n", m_OwnerPhoneNumber);
+                vehicleInGarageDetails.AppendFormat("\n");
                 vehicleInGarageDetails.AppendFormat("{0}\n\n", m_Vehicle.ToString());
-
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 vehicleInGarageDetails.AppendFormat("Vehicle Status:\n");
-                vehicleInGarageDetails.AppendFormat("---------------\n");
+                vehicleInGarageDetails.AppendFormat("===============\n");
+                Console.ForegroundColor = ConsoleColor.White;
                 vehicleInGarageDetails.AppendFormat("The Status Of The Vehicle: {0}\n", m_VehicleStatus);
 
                 return vehicleInGarageDetails.ToString();

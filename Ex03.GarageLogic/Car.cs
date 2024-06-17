@@ -21,7 +21,6 @@ namespace Ex03.GarageLogic
         private const int k_CarNumberOfWheels = 5;
         private const float k_CarMaxAirPressure = 31;
         private const int k_DefaultValueForColorAndDoors = -1;
-
         private eCarColor m_CarColor;
         private int m_NumberOfDoors;
 
@@ -58,22 +57,13 @@ namespace Ex03.GarageLogic
         {
             StringBuilder vehicleInformation = new StringBuilder();
 
-            vehicleInformation.AppendFormat("Vehicle Information:\n");
-            vehicleInformation.AppendFormat("=====================\n");
-            vehicleInformation.AppendFormat("License Number: {0}\n", LicenseNumber);
-            vehicleInformation.AppendFormat("Model Name: {0}\n", ModelName);
+            vehicleInformation.AppendFormat(base.ToString());
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            vehicleInformation.AppendFormat("Car Attributes:\n");
+            vehicleInformation.AppendFormat("===============\n");
+            Console.ForegroundColor = ConsoleColor.White;
             vehicleInformation.AppendFormat("Vehicle Color: {0}\n", CarColor);
-            vehicleInformation.AppendFormat("Number Of Doors: {0}\n", NumberOfDoors);
-            vehicleInformation.AppendFormat("\n");
-
-            vehicleInformation.AppendFormat("Wheels:\n");
-            vehicleInformation.AppendFormat("-------\n");
-            vehicleInformation.AppendFormat("{0}\n", Wheels[0].ToString());
-
-            vehicleInformation.AppendFormat("\n");
-            vehicleInformation.AppendFormat("Engine Information:\n");
-            vehicleInformation.AppendFormat("-------------------\n");
-            vehicleInformation.AppendFormat("{0}\n", Engine.ToString());
+            vehicleInformation.AppendFormat("Number Of Doors: {0}", NumberOfDoors);
 
             return vehicleInformation.ToString();
         }
@@ -82,6 +72,7 @@ namespace Ex03.GarageLogic
         public override List<string> SetVehicleQueriesList()
          {
              List<string> queriesList = new List<string>();
+
              queriesList.Add(@"Pick The Color Of The Car:
 1. Red
 2. White
@@ -93,9 +84,9 @@ namespace Ex03.GarageLogic
              return queriesList;
          }
 
-        public override void SetResponsesForVehicleQueries(List<string> i_userResponses)
+        public override void SetResponsesForVehicleQueries(List<string> i_UserResponses)
         {
-            Exception exception = checkForThrownExceptionsInResponses(i_userResponses, out int o_ColorPicked, out int o_NumberOfDoors);
+            Exception exception = checkForThrownExceptionsInResponses(i_UserResponses, out int o_ColorPicked, out int o_NumberOfDoors);
 
             if (exception != null)
             {
@@ -109,7 +100,7 @@ namespace Ex03.GarageLogic
         }
 
         private Exception checkForThrownExceptionsInResponses(
-            List<string> i_userResponses,
+            List<string> i_UserResponses,
             out int o_ColorPicked,
             out int o_NumberOfDoors)
         {
@@ -117,7 +108,7 @@ namespace Ex03.GarageLogic
             o_ColorPicked = k_DefaultValueForColorAndDoors;
             o_NumberOfDoors = k_DefaultValueForColorAndDoors;
 
-            if (!int.TryParse(i_userResponses[1], out o_NumberOfDoors))
+            if (!int.TryParse(i_UserResponses[1], out o_NumberOfDoors))
             {
                 exception = new FormatException("Invalid Input Format of The Number of Doors, Try Again: ");
                 exception.Source = "1";
@@ -127,7 +118,7 @@ namespace Ex03.GarageLogic
                 exception = new ValueOutOfRangeException(2, 5, "Number of Doors For Car Is Out of Range, Try Again (Choose a Number Between 2-5): ", exception);
                 exception.Source = "1";
             }
-            if (!int.TryParse(i_userResponses[0], out o_ColorPicked))
+            if (!int.TryParse(i_UserResponses[0], out o_ColorPicked))
             {
                 exception = new FormatException("Invalid Input Format of The Car's Color, Try again: ");
                 exception.Source = "0";

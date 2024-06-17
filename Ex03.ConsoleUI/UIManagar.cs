@@ -206,6 +206,8 @@ namespace Ex03.ConsoleUI
                     string licenseNumber = this.getVehicleLicenseNumberFromUser();
                     Garage.VehicleStatusAndOwnerDetails userVehicle = i_Garage.GetVehicleByLicenceNumber(licenseNumber);
                     Console.WriteLine(userVehicle.ToString());
+                    //Console.WriteLine(userVehicle.OwnerVehicle.Wheels.ToString());
+                    //Console.WriteLine(userVehicle.OwnerVehicle.Engine.ToString());
                     displayBackToMenuOption();
                     userChoice = 2;
                 }
@@ -256,6 +258,8 @@ namespace Ex03.ConsoleUI
                 Console.WriteLine("Please Enter Which Octan You'd Like:");
                 displayFuelMenu();
                 o_FuelChoice = (int)getAndValidateInputFromUserInRange(1, 4);
+                
+
             }
             Console.WriteLine("Enter how much you'd like to add to you vehicle: ");
             o_FuelAmountToAdd = getAndValidateInputFromUserInRange(0, 120);

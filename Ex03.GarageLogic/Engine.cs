@@ -107,15 +107,16 @@ namespace Ex03.GarageLogic
             public override string ToString()
             {
                 StringBuilder information = new StringBuilder();
-                information.AppendFormat(@"Electric Engine:
-    Capacity Of Battery: {0}
-    Battery Time Left: {1}",
-                    MaxAmountOfFuel.ToString(),
-                    FuelLeft.ToString());
-                information.Append(Environment.NewLine);
+
+                information.AppendFormat("Fuel Engine:\n");
+                information.AppendFormat("============\n");
+                information.AppendFormat("Tank Capacity: {0}\n", MaxAmountOfFuel);
+                information.AppendFormat("Remaining Fuel: {0}\n", FuelLeft);
 
                 return information.ToString();
             }
+
+
         }
 
         /* END -  FuelBasedEngine Class */
@@ -191,15 +192,16 @@ namespace Ex03.GarageLogic
             public override string ToString()
             {
                 StringBuilder information = new StringBuilder();
-                information.AppendFormat(@"Electric Engine:
-    Capacity Of Battery: {0}
-    Battery Time Left: {1}",
-                    m_BatteryTimeLeft.ToString(),
-                    m_BatteryTimeLeft.ToString());
-                information.Append(Environment.NewLine);
+
+                information.AppendFormat("Electric Engine:\n");
+                information.AppendFormat("================\n");
+                information.AppendFormat("Capacity Of Battery: {0}\n", m_BatteryCapacity);
+                information.AppendFormat("Battery Time Left: {0}\n", m_BatteryTimeLeft);
 
                 return information.ToString();
             }
+
+
         }
         /* END - ElectricBasedEngine Class */
 

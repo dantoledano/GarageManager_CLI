@@ -4,6 +4,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Ex03.GarageLogic.Car;
 
 namespace Ex03.GarageLogic
 {
@@ -48,17 +49,29 @@ namespace Ex03.GarageLogic
 
         public override string ToString()
         {
-            StringBuilder truckDetails = new StringBuilder();
-            //truckDetails.Append(base.ToString());
-            truckDetails.AppendFormat(@"Truck Attributes:
-    Transporting Toxins: {0}
-    Cargo Capacity: {1}",
-                m_IsTransportingToxins.ToString(),
-                m_CargoCapacity.ToString());
-            truckDetails.Append(Environment.NewLine);
+            StringBuilder vehicleInformation = new StringBuilder();
 
-            return truckDetails.ToString();
+            vehicleInformation.AppendFormat("Vehicle Information:\n");
+            vehicleInformation.AppendFormat("=====================\n");
+            vehicleInformation.AppendFormat("License Number: {0}\n", LicenseNumber);
+            vehicleInformation.AppendFormat("Model Name: {0}\n", ModelName);
+            vehicleInformation.AppendFormat("\n");
+            vehicleInformation.AppendFormat("Transporting Toxins: {0}\n", IsTransportingToxins);
+            vehicleInformation.AppendFormat("Cargo Capacity: {0}\n", CargoCapacity);
+            vehicleInformation.AppendFormat("\n");
+
+            vehicleInformation.AppendFormat("Wheels:\n");
+            vehicleInformation.AppendFormat("-------\n");
+            vehicleInformation.AppendFormat("{0}\n", Wheels[0].ToString());
+
+            vehicleInformation.AppendFormat("\n");
+            vehicleInformation.AppendFormat("Engine Information:\n");
+            vehicleInformation.AppendFormat("-------------------\n");
+            vehicleInformation.AppendFormat("{0}\n", Engine.ToString());
+
+            return vehicleInformation.ToString();
         }
+
 
         public override List<string> SetVehicleQueriesList()
         {

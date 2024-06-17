@@ -12,10 +12,10 @@ namespace Ex03.GarageLogic
     {
         public enum eLicenseType
         {
-            A,
-            A1,
-            AA,
-            B1
+            A=1,
+            A1=2,
+            AA=3,
+            B1=4
         }
 
         private const int k_CarNumberOfWheels = 2;
@@ -56,18 +56,32 @@ namespace Ex03.GarageLogic
 
         public override string ToString()
         {
-            StringBuilder motorcycleAttributes = new StringBuilder();
+            StringBuilder vehicleInformation = new StringBuilder();
 
-            //motorcycleAttributes.Append(base.ToString());
-            motorcycleAttributes.AppendFormat(@"Motorcycle Attributes: 
-License Type: {0}
-Engine Capacity: {1}", m_LicenseType.ToString(), m_EngineCapacity.ToString());
-            motorcycleAttributes.Append(Environment.NewLine);
+            vehicleInformation.AppendFormat("Vehicle Information:\n");
+            vehicleInformation.AppendFormat("=====================\n");
+            vehicleInformation.AppendFormat("License Number: {0}\n", LicenseNumber);
+            vehicleInformation.AppendFormat("Model Name: {0}\n", ModelName);
+            vehicleInformation.AppendFormat("\n");
+            vehicleInformation.AppendFormat("EngineCapacity {0}\n", EngineCapacity);
+            vehicleInformation.AppendFormat("License Type: {0}\n", LicenseType.ToString());
+            vehicleInformation.AppendFormat("\n");
 
-            return motorcycleAttributes.ToString();
+            vehicleInformation.AppendFormat("Wheels:\n");
+            vehicleInformation.AppendFormat("-------\n");
+            vehicleInformation.AppendFormat("{0}\n", Wheels[0].ToString());
+
+            vehicleInformation.AppendFormat("\n");
+            vehicleInformation.AppendFormat("Engine Information:\n");
+            vehicleInformation.AppendFormat("-------------------\n");
+            vehicleInformation.AppendFormat("{0}\n", Engine.ToString());
+
+            return vehicleInformation.ToString();
         }
 
-        public override List<string> SetVehicleQueriesList()
+    
+
+    public override List<string> SetVehicleQueriesList()
         {
             List<string> queriesList = new List<string>();
 

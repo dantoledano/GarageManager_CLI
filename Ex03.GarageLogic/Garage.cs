@@ -134,7 +134,7 @@ namespace Ex03.GarageLogic
             try
             {
                 VehicleStatusAndOwnerDetails vehicleDetails = GetVehicleByLicenceNumber(i_LicenseNumber); 
-                //vehicleDetails.OwnerVehicle.לקרוא לפונקציה שמנפחת אויר בגלגלים פר סוג רכב
+                vehicleDetails.OwnerVehicle.FillTiresToMax();
             }
             catch(Exception exception)
             {
@@ -214,19 +214,42 @@ namespace Ex03.GarageLogic
                 }
             }
 
+            //            public override string ToString()
+            //            {
+            //                StringBuilder vehicleInGarageDetails = new StringBuilder();
+            //                vehicleInGarageDetails.AppendFormat(@"Owner information:
+            //    Owner Name: {0}
+            //    Owner Phone Number: {1}
+            //",
+            //m_OwnerName,
+            //m_OwnerPhoneNumber);
+            //                vehicleInGarageDetails.AppendFormat(this.m_Vehicle.ToString());
+            //                vehicleInGarageDetails.AppendFormat("The Status Of The Vehicle: {0}" + Environment.NewLine, m_VehicleStatus.ToString());
+
+
+            //                return vehicleInGarageDetails.ToString();
+            //            }
+
             public override string ToString()
             {
                 StringBuilder vehicleInGarageDetails = new StringBuilder();
-                vehicleInGarageDetails.AppendFormat(@"Owner information:
-    Owner Name: {0}
-    Owner Phone Number: {1}
-",
-m_OwnerName,
-m_OwnerPhoneNumber);
-                vehicleInGarageDetails.AppendFormat(this.m_Vehicle.ToString());
-                vehicleInGarageDetails.AppendFormat("The Status Of The Vehicle: {0}" + Environment.NewLine, m_VehicleStatus.ToString());
+
+                vehicleInGarageDetails.AppendFormat("Owner Information:\n");
+                vehicleInGarageDetails.AppendFormat("===================\n");
+                vehicleInGarageDetails.AppendFormat("Owner Name: {0}\n", m_OwnerName);
+                vehicleInGarageDetails.AppendFormat("Owner Phone Number: {0}\n\n", m_OwnerPhoneNumber);
+
+                vehicleInGarageDetails.AppendFormat("----------------\n");
+                vehicleInGarageDetails.AppendFormat("{0}\n\n", m_Vehicle.ToString());
+
+                vehicleInGarageDetails.AppendFormat("Vehicle Status:\n");
+                vehicleInGarageDetails.AppendFormat("---------------\n");
+                vehicleInGarageDetails.AppendFormat("The Status Of The Vehicle: {0}\n", m_VehicleStatus);
+
                 return vehicleInGarageDetails.ToString();
             }
+
+
 
         }
 

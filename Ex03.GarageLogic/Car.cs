@@ -54,23 +54,32 @@ namespace Ex03.GarageLogic
         {
         }
 
-         public override string ToString()
-         {
-             StringBuilder carAttributes = new StringBuilder();
+        public override string ToString()
+        {
+            StringBuilder vehicleInformation = new StringBuilder();
 
-             //carAttributes.Append(base.ToString());
-             carAttributes.AppendFormat(
-                 @"Car Attributes:
-                   Color: {0}
-                   Number of Doors: {1}", m_CarColor.ToString(), m_NumberOfDoors.ToString());
-             carAttributes.Append(Environment.NewLine);
-             Console.WriteLine(carAttributes.ToString());
-             
+            vehicleInformation.AppendFormat("Vehicle Information:\n");
+            vehicleInformation.AppendFormat("=====================\n");
+            vehicleInformation.AppendFormat("License Number: {0}\n", LicenseNumber);
+            vehicleInformation.AppendFormat("Model Name: {0}\n", ModelName);
+            vehicleInformation.AppendFormat("Vehicle Color: {0}\n", CarColor);
+            vehicleInformation.AppendFormat("Number Of Doors: {0}\n", NumberOfDoors);
+            vehicleInformation.AppendFormat("\n");
 
-             return carAttributes.ToString();
-         }
+            vehicleInformation.AppendFormat("Wheels:\n");
+            vehicleInformation.AppendFormat("-------\n");
+            vehicleInformation.AppendFormat("{0}\n", Wheels[0].ToString());
 
-         public override List<string> SetVehicleQueriesList()
+            vehicleInformation.AppendFormat("\n");
+            vehicleInformation.AppendFormat("Engine Information:\n");
+            vehicleInformation.AppendFormat("-------------------\n");
+            vehicleInformation.AppendFormat("{0}\n", Engine.ToString());
+
+            return vehicleInformation.ToString();
+        }
+
+
+        public override List<string> SetVehicleQueriesList()
          {
              List<string> queriesList = new List<string>();
              queriesList.Add(@"Pick The Color Of The Car:

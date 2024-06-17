@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Ex03.GarageLogic.Vehicle;
 
 namespace Ex03.GarageLogic
 {
@@ -121,6 +122,30 @@ namespace Ex03.GarageLogic
             }
         }
 
+        public void FillTiresToMax()
+        {
+            float remaningAirToReachMax = Wheels[0].MaxAirPressure - Wheels[0].RemainingAir;
+
+            foreach (Wheel wheel in this.r_Wheels)
+            {
+                try
+                {
+                    if (remaningAirToReachMax > 0)
+                    {
+                        wheel.FillAir(remaningAirToReachMax);
+                    }
+                    else
+                    {
+                        throw new ValueOutOfRangeException(0, 33, "Maximun Air Pressure Has Reached Already!");
+                    }
+                }
+                catch (ValueOutOfRangeException exception)
+                {
+                    throw exception;
+                }
+            }
+        }
+
         /* ------------------------------------------------------------ */
         /* - Class Wheel -  */
         /* BEGINING */
@@ -192,21 +217,46 @@ namespace Ex03.GarageLogic
             public override string ToString()
             {
                 StringBuilder information = new StringBuilder();
-                information.AppendFormat(@"
-    Maximum Air Presure: {0}
-    Remaining Air Presure: {1}
-    Manufactor Name: {2}",
-                    r_MaxAirPressure.ToString(),
-                    m_RemainingAir.ToString(),
-                    m_ManufactureName.ToString());
-                information.Append(Environment.NewLine);
+
+                information.AppendFormat("Wheel Information:{0}", Environment.NewLine);
+                information.AppendFormat("=================={0}", Environment.NewLine);
+                information.AppendFormat("Maximum Air Pressure: {0}{1}", r_MaxAirPressure, Environment.NewLine);
+                information.AppendFormat("Remaining Air Pressure: {0}{1}", m_RemainingAir, Environment.NewLine);
+                information.AppendFormat("Manufacturer Name: {0}{1}", m_ManufactureName, Environment.NewLine);
 
                 return information.ToString();
             }
 
+
             /* END */
 
 
+        }
+
+
+        public override string ToString()
+        {
+            Console.WriteLine("TEST");
+            StringBuilder vehicleInformation = new StringBuilder();
+            //vehicleInformation.AppendLine("Vehicle Information:");
+            //vehicleInformation.AppendLine("=====================");
+            //vehicleInformation.AppendLine($"License Number: {r_LicenseNumber}");
+            //vehicleInformation.AppendLine($"Model Name: {m_ModelName}");
+            //vehicleInformation.AppendLine();
+            //vehicleInformation.AppendLine("Wheels:");
+            //vehicleInformation.AppendLine("-------");
+
+            //for (int i = 0; i < r_Wheels.Count; i++)
+            //{
+            //    vehicleInformation.AppendLine($"{i + 1}. {r_Wheels[i]}");
+            //}
+
+            //vehicleInformation.AppendLine();
+            //vehicleInformation.AppendLine("Engine Information:");
+            //vehicleInformation.AppendLine("-------------------");
+            //vehicleInformation.AppendLine(m_Engine.ToString());
+
+            return vehicleInformation.ToString();
         }
 
     }

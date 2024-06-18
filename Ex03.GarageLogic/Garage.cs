@@ -29,7 +29,7 @@ namespace Ex03.GarageLogic
         {
             try
             {
-                VehicleStatusAndOwnerDetails vehicleDetails = GetVehicleByLicenceNumber(i_LicenseNumber);
+                VehicleStatusAndOwnerDetails vehicleDetails = GetVehicleByLicenseNumber(i_LicenseNumber);
                 vehicleDetails.VehicleStatus = i_NewGarageStatus;
             }
             catch(ArgumentException exception)
@@ -80,7 +80,7 @@ namespace Ex03.GarageLogic
             }
         }
 
-        public VehicleStatusAndOwnerDetails GetVehicleByLicenceNumber(string i_LicenseNumber)
+        public VehicleStatusAndOwnerDetails GetVehicleByLicenseNumber(string i_LicenseNumber)
         {
             bool isVehicleFound = r_VehiclesOfGarage.TryGetValue(
                 i_LicenseNumber,
@@ -130,7 +130,7 @@ namespace Ex03.GarageLogic
         {
             try
             {
-                VehicleStatusAndOwnerDetails vehicleDetails = GetVehicleByLicenceNumber(i_LicenseNumber); 
+                VehicleStatusAndOwnerDetails vehicleDetails = GetVehicleByLicenseNumber(i_LicenseNumber); 
                 vehicleDetails.OwnerVehicle.FillTiresToMax();
             }
             catch(Exception exception)

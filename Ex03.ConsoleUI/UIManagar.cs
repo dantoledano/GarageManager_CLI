@@ -179,7 +179,7 @@ namespace Ex03.ConsoleUI
                 try
                 {
                     string licenseNumber = this.getVehicleLicenseNumberFromUser();
-                    Garage.VehicleStatusAndOwnerDetails userVehicle = i_Garage.GetVehicleByLicenceNumber(licenseNumber);
+                    Garage.VehicleStatusAndOwnerDetails userVehicle = i_Garage.GetVehicleByLicenseNumber(licenseNumber);
                     Console.WriteLine(userVehicle.ToString());
                     displayBackToMenuOption();
                     userChoice = 2;
@@ -462,7 +462,6 @@ Choice: ");
         private void updateStatusOfVehicle(Garage i_Garage)
         {
             Console.WriteLine("Updating Vehicle Status..." + Environment.NewLine);
-            Garage.VehicleStatusAndOwnerDetails.eVehicleGarageStatus status = getStatusOfVehicle();
             int userChoice = 1;
 
             while (userChoice == 1)
@@ -470,7 +469,9 @@ Choice: ");
                 try
                 {
                     string licenseNumber = getVehicleLicenseNumberFromUser();
-                    i_Garage.SetVehicleGarageStatus(licenseNumber, status);
+                    i_Garage.GetVehicleByLicenseNumber(licenseNumber);
+                    Garage.VehicleStatusAndOwnerDetails.eVehicleGarageStatus newStatus = getStatusOfVehicle();
+                    i_Garage.SetVehicleGarageStatus(licenseNumber, newStatus);
                     userChoice = 2;
                     Console.WriteLine("Vehicle Status Changed Successfully!");
                     displayBackToMenuOption();
@@ -504,7 +505,7 @@ Enter Your Choice: ");
                 try
                 {
                     string licenseNumber = getVehicleLicenseNumberFromUser();
-                    Garage.VehicleStatusAndOwnerDetails vehicleToPowerUp = i_Garage.GetVehicleByLicenceNumber(licenseNumber);
+                    Garage.VehicleStatusAndOwnerDetails vehicleToPowerUp = i_Garage.GetVehicleByLicenseNumber(licenseNumber);
                     askForFuelOctanAndFuelAmountToFill(out int userFuelTypeChoice, out float quantityToFuelOrCharge, i_EngineType);
                     i_Garage.FuelOrChargeVehicle(i_EngineType, licenseNumber, quantityToFuelOrCharge, (Engine.FuelBasedEngine.eFuelOctan)userFuelTypeChoice, vehicleToPowerUp);
                     userMenuChoice = 2;

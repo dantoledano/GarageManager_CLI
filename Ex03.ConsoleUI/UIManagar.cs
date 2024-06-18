@@ -49,7 +49,6 @@ namespace Ex03.ConsoleUI
             printInputRequest();
             Console.ResetColor();
         }
-
         private void displayTypeOfVehicleMenu()
         {
             Console.Clear();
@@ -70,24 +69,23 @@ namespace Ex03.ConsoleUI
             printInputRequest();
             Console.ResetColor(); 
         }
-
-        private int showMenuOfOptionToFilterCarsInGarage() 
+        private int showMenuOfOptionToFilterCarsInGarage()
         {
             Console.Clear();
             StringBuilder menu = new StringBuilder();
             string title = "==== License Plate Filter ====";
             string border = new string('=', title.Length);
 
-            menu.AppendLine(border);
-            menu.AppendLine(title);
-            menu.AppendLine(border);
-            menu.AppendLine("Displaying License Numbers Using The Following Filter:" + Environment.NewLine);
-            menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Filter by Current Status in The Garage."));
-            menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Don't Use Filtering."));
-            menu.AppendLine(border);
+            menu.AppendFormat("{0}{1}", border, Environment.NewLine);
+            menu.AppendFormat("{0}{1}", title, Environment.NewLine);
+            menu.AppendFormat("{0}{1}", border, Environment.NewLine);
+            menu.AppendFormat("Displaying License Numbers Using The Following Filter:{0}{1}", Environment.NewLine, Environment.NewLine);
+            menu.AppendFormat("{0, -2} {1}{2}", "1.", "Filter by Current Status in The Garage.", Environment.NewLine);
+            menu.AppendFormat("{0, -2} {1}{2}", "2.", "Don't Use Filtering.", Environment.NewLine);
+            menu.AppendFormat("{0}{1}", border, Environment.NewLine);
             Console.Write(menu.ToString());
             printInputRequest();
-            Console.ResetColor(); 
+            Console.ResetColor();
             int userChoice = (int)getAndValidateInputFromUserInRange(1, 2);
 
             return userChoice;
@@ -169,14 +167,14 @@ namespace Ex03.ConsoleUI
         
         private void displayVehicleInformation(Garage i_Garage)
         {
-            Console.WriteLine("Display Vehicle Information From The Garage By License Number:" + Environment.NewLine);
+            Console.WriteLine(@"Display Vehicle Information From The Garage By License Number:{0}", Environment.NewLine);
             int userChoice = 1;
 
             while (userChoice == 1)
             {
                 try
                 {
-                    string licenseNumber = this.getVehicleLicenseNumberFromUser();
+                    string licenseNumber = getVehicleLicenseNumberFromUser();
                     Garage.VehicleStatusAndOwnerDetails userVehicle = i_Garage.GetVehicleByLicenseNumber(licenseNumber);
                     Console.WriteLine(userVehicle.ToString());
                     displayBackToMenuOption();
@@ -193,7 +191,7 @@ namespace Ex03.ConsoleUI
         private void getVehicleStatusAndOwnerDetails(Garage i_Garage)
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(" === Vehicle Is Being Added To The Garage === " + Environment.NewLine);
+            Console.WriteLine(@" === Vehicle Is Being Added To The Garage === {0}", Environment.NewLine);
             Garage.VehicleStatusAndOwnerDetails vehicleStatusAndOwnerDetails = null;
             string licenseNumber = getVehicleLicenseNumberFromUser();
 
@@ -299,7 +297,7 @@ namespace Ex03.ConsoleUI
 
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("==== VEHICLE INFORMATION ENTRY ====" + Environment.NewLine);
+            Console.WriteLine(@"==== VEHICLE INFORMATION ENTRY ===={0}", Environment.NewLine);
             Console.WriteLine("Answer The Questions To Set The Vehicle Information");
             Console.WriteLine("----------------------------------------------------");
             Console.ForegroundColor = ConsoleColor.White;
@@ -337,8 +335,8 @@ namespace Ex03.ConsoleUI
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Enter Your name:");
-            o_OwnerName = this.getAndValidateStringInputOfDigitsAndLetters("Invalid Name Format. Try Again");
-            o_OwnerPhoneNumber = this.getAndValidatePositiveNumberInput("Enter Your Phone Number: ").ToString();
+            o_OwnerName = getAndValidateStringInputOfDigitsAndLetters("Invalid Name Format. Try Again");
+            o_OwnerPhoneNumber = getAndValidatePositiveNumberInput("Enter Your Phone Number: ").ToString();
         }
 
         private void correctAndSetVehicleInformation(ref Vehicle io_Vehicle, VehicleAllocator.eVehicleType i_TypeOfVehicle)
@@ -375,7 +373,7 @@ namespace Ex03.ConsoleUI
 
         private void inflateVehicleWheels(Garage i_Garage)
         {
-            Console.WriteLine("Inflating Air Pressure To Maximum" + Environment.NewLine);
+            Console.WriteLine(@"Inflating Air Pressure To Maximum{0}", Environment.NewLine);
             int userChoice = 1;
 
             while (userChoice == 1)
@@ -456,7 +454,7 @@ Choice: ");
 
         private void updateStatusOfVehicle(Garage i_Garage)
         {
-            Console.WriteLine("Updating Vehicle Status..." + Environment.NewLine);
+            Console.WriteLine("Updating Vehicle Status...{0}", Environment.NewLine);
             int userChoice = 1;
 
             while (userChoice == 1)

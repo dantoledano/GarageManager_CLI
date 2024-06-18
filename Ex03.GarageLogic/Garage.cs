@@ -201,7 +201,7 @@ namespace Ex03.GarageLogic
             {
                 get
                 {
-                    return this.m_VehicleStatus;
+                    return m_VehicleStatus;
                 }
                 set
                 {
@@ -214,18 +214,18 @@ namespace Ex03.GarageLogic
                 StringBuilder vehicleInGarageDetails = new StringBuilder();
 
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
-                vehicleInGarageDetails.AppendFormat("Owner Information:\n");
-                vehicleInGarageDetails.AppendFormat("===================\n");
+                vehicleInGarageDetails.AppendFormat("Owner Information:{0}", Environment.NewLine);
+                vehicleInGarageDetails.AppendFormat("==================={0}", Environment.NewLine);
                 Console.ForegroundColor = ConsoleColor.White;
-                vehicleInGarageDetails.AppendFormat("Owner Name: {0}\n", m_OwnerName);
-                vehicleInGarageDetails.AppendFormat("Owner Phone Number: {0}\n", m_OwnerPhoneNumber);
-                vehicleInGarageDetails.AppendFormat("\n");
-                vehicleInGarageDetails.AppendFormat("{0}\n\n", m_Vehicle.ToString());
+                vehicleInGarageDetails.AppendFormat("Owner Name: {0}{1}", m_OwnerName, Environment.NewLine);
+                vehicleInGarageDetails.AppendFormat("Owner Phone Number: {0}{1}", m_OwnerPhoneNumber, Environment.NewLine);
+                vehicleInGarageDetails.AppendFormat("{0}", Environment.NewLine);
+                vehicleInGarageDetails.AppendFormat("{0}{1}{2}", m_Vehicle.ToString(), Environment.NewLine, Environment.NewLine);
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
-                vehicleInGarageDetails.AppendFormat("Vehicle Status:\n");
-                vehicleInGarageDetails.AppendFormat("===============\n");
+                vehicleInGarageDetails.AppendFormat("Vehicle Status:{0}", Environment.NewLine);
+                vehicleInGarageDetails.AppendFormat("==============={0}", Environment.NewLine);
                 Console.ForegroundColor = ConsoleColor.White;
-                vehicleInGarageDetails.AppendFormat("The Status Of The Vehicle: {0}\n", m_VehicleStatus);
+                vehicleInGarageDetails.AppendFormat("The Status Of The Vehicle: {0}{1}", m_VehicleStatus, Environment.NewLine);
 
                 return vehicleInGarageDetails.ToString();
             }

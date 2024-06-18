@@ -76,7 +76,7 @@ namespace Ex03.GarageLogic
             {
                 try
                 {
-                    if(i_FuelType != this.FuelOctan)
+                    if(i_FuelType != FuelOctan)
                     {
                         throw new ArgumentException("Type Of Fuel Is Not Matching! Try Again.");
                     }
@@ -122,10 +122,10 @@ namespace Ex03.GarageLogic
             {
                 StringBuilder information = new StringBuilder();
 
-                information.AppendFormat("Fuel Engine:\n");
-                information.AppendFormat("------------\n");
-                information.AppendFormat("Tank Capacity: {0}\n", MaxAmountOfFuel);
-                information.AppendFormat("Remaining Fuel: {0}\n", FuelLeft);
+                information.AppendFormat("Fuel Engine:{0}", Environment.NewLine);
+                information.AppendFormat("------------{0}", Environment.NewLine);
+                information.AppendFormat("Tank Capacity: {0}{1}", MaxAmountOfFuel, Environment.NewLine);
+                information.AppendFormat("Remaining Fuel: {0}{1}", FuelLeft, Environment.NewLine);
 
                 return information.ToString();
             }
@@ -213,10 +213,10 @@ namespace Ex03.GarageLogic
             {
                 StringBuilder information = new StringBuilder();
 
-                information.AppendFormat("Electric Engine:\n");
-                information.AppendFormat("----------------\n");
-                information.AppendFormat("Capacity Of Battery: {0}\n", m_BatteryCapacity);
-                information.AppendFormat("Battery Time Left: {0}\n", m_BatteryTimeLeft);
+                information.AppendFormat("Electric Engine:{0}", Environment.NewLine);
+                information.AppendFormat("----------------{0}", Environment.NewLine);
+                information.AppendFormat("Capacity Of Battery: {0}{1}", m_BatteryCapacity, Environment.NewLine);
+                information.AppendFormat("Battery Time Left: {0}{1}", m_BatteryTimeLeft, Environment.NewLine);
 
                 return information.ToString();
             }

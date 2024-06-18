@@ -59,10 +59,10 @@ namespace Ex03.GarageLogic
 
             vehicleInformation.AppendFormat(base.ToString());
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            vehicleInformation.AppendFormat("Motorcycle Attributes:\n");
-            vehicleInformation.AppendFormat("======================\n");
+            vehicleInformation.AppendFormat("Motorcycle Attributes:{0}", Environment.NewLine);
+            vehicleInformation.AppendFormat("======================{0}", Environment.NewLine);
             Console.ForegroundColor = ConsoleColor.White;
-            vehicleInformation.AppendFormat("EngineCapacity {0}\n", EngineCapacity);
+            vehicleInformation.AppendFormat("EngineCapacity {0}{1}", EngineCapacity, Environment.NewLine);
             vehicleInformation.AppendFormat("License Type: {0}", LicenseType.ToString());
 
             return vehicleInformation.ToString();

@@ -59,10 +59,10 @@ namespace Ex03.GarageLogic
 
             vehicleInformation.AppendFormat(base.ToString());
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            vehicleInformation.AppendFormat("Car Attributes:\n");
-            vehicleInformation.AppendFormat("===============\n");
+            vehicleInformation.AppendFormat("Car Attributes:{0}", Environment.NewLine);
+            vehicleInformation.AppendFormat("==============={0}", Environment.NewLine);
             Console.ForegroundColor = ConsoleColor.White;
-            vehicleInformation.AppendFormat("Vehicle Color: {0}\n", CarColor);
+            vehicleInformation.AppendFormat("Vehicle Color: {0}{1}", CarColor, Environment.NewLine);
             vehicleInformation.AppendFormat("Number Of Doors: {0}", NumberOfDoors);
 
             return vehicleInformation.ToString();

@@ -52,10 +52,10 @@ namespace Ex03.GarageLogic
 
             vehicleInformation.Append(base.ToString());
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            vehicleInformation.AppendFormat("Truck Attributes:\n");
-            vehicleInformation.AppendFormat("=================\n");
+            vehicleInformation.AppendFormat("Truck Attributes:{0}", Environment.NewLine);
+            vehicleInformation.AppendFormat("================={0}", Environment.NewLine);
             Console.ForegroundColor = ConsoleColor.White;
-            vehicleInformation.AppendFormat("Transporting Toxins: {0}\n", IsTransportingToxins);
+            vehicleInformation.AppendFormat("Transporting Toxins: {0}{1}", IsTransportingToxins, Environment.NewLine);
             vehicleInformation.AppendFormat("Cargo Capacity: {0}", CargoCapacity);
 
             return vehicleInformation.ToString();

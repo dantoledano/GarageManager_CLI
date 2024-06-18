@@ -89,13 +89,13 @@ namespace Ex03.GarageLogic
 
         public void SetPowerLevelLeft(float i_PowerLevel)
         {
-            if(this.Engine is Engine.FuelBasedEngine)
+            if(Engine is Engine.FuelBasedEngine)
             {
-                (this.Engine as Engine.FuelBasedEngine).FuelLeft = i_PowerLevel;
+                (Engine as Engine.FuelBasedEngine).FuelLeft = i_PowerLevel;
             }
             else
             {
-                (this.Engine as Engine.ElectricBasedEngine).BatteryTimeLeft = i_PowerLevel;
+                (Engine as Engine.ElectricBasedEngine).BatteryTimeLeft = i_PowerLevel;
             }
         }
 
@@ -124,7 +124,7 @@ namespace Ex03.GarageLogic
         {
             float remainingAirToReachMax = Wheels[0].MaxAirPressure - Wheels[0].RemainingAir;
 
-            foreach (Wheel wheel in this.r_Wheels)
+            foreach (Wheel wheel in r_Wheels)
             {
                 try
                 {
@@ -227,20 +227,20 @@ namespace Ex03.GarageLogic
             StringBuilder vehicleInformation = new StringBuilder();
             Console.ForegroundColor = ConsoleColor.DarkCyan;
 
-            vehicleInformation.AppendFormat("Vehicle Information:\n");
-            vehicleInformation.AppendFormat("=====================\n");
+            vehicleInformation.AppendFormat("Vehicle Information:{0}", Environment.NewLine);
+            vehicleInformation.AppendFormat("====================={0}", Environment.NewLine);
             Console.ForegroundColor = ConsoleColor.White;
-            vehicleInformation.AppendFormat("License Number: {0}\n", LicenseNumber);
-            vehicleInformation.AppendFormat("Model Name: {0}\n", ModelName);
-            vehicleInformation.AppendFormat("\n");
-            vehicleInformation.AppendFormat("{0}\n", Wheels[0].ToString());
-            vehicleInformation.AppendFormat("\n");
+            vehicleInformation.AppendFormat("License Number: {0}{1}", LicenseNumber, Environment.NewLine);
+            vehicleInformation.AppendFormat("Model Name: {0}{1}", ModelName, Environment.NewLine);
+            vehicleInformation.AppendFormat("{0}", Environment.NewLine);
+            vehicleInformation.AppendFormat("{0}{1}", Wheels[0].ToString(), Environment.NewLine);
+            vehicleInformation.AppendFormat("{0}", Environment.NewLine);
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            vehicleInformation.AppendFormat("Engine Information:\n");
-            vehicleInformation.AppendFormat("==================\n");
-            vehicleInformation.AppendFormat("Power Percentage: {0:F1}%\n",PercentagePowerLeft);
+            vehicleInformation.AppendFormat("Engine Information:{0}", Environment.NewLine);
+            vehicleInformation.AppendFormat("=================={0}", Environment.NewLine);
+            vehicleInformation.AppendFormat("Power Percentage: {0:F1}%{1}",PercentagePowerLeft, Environment.NewLine);
             Console.ForegroundColor = ConsoleColor.White;
-            vehicleInformation.AppendFormat("{0}\n", Engine.ToString());
+            vehicleInformation.AppendFormat("{0}{1}", Engine.ToString(), Environment.NewLine);
 
             return vehicleInformation.ToString();
         }

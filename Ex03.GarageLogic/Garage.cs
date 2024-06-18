@@ -120,7 +120,6 @@ namespace Ex03.GarageLogic
                     listOfDesiredVehiclesLicenseNumbers.AppendLine(currentPair.Key);
                     countOfDesiredVehicles++;
                 }
-
             }
 
             return listOfDesiredVehiclesLicenseNumbers.ToString();
@@ -230,10 +229,6 @@ namespace Ex03.GarageLogic
 
                 return vehicleInGarageDetails.ToString();
             }
-
-
-
         }
-
     }
 }

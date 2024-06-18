@@ -18,7 +18,6 @@ namespace Ex03.GarageLogic
 
         public Vehicle(string i_LicenseNumber, int i_NumberOfWheels, float i_MaxAirPressureForWheel, Engine i_Engine)
         {
-
             m_PercentagePowerLeft = 0;
             m_Engine = i_Engine;
             r_LicenseNumber = i_LicenseNumber;
@@ -226,8 +225,8 @@ namespace Ex03.GarageLogic
         public override string ToString()
         {
             StringBuilder vehicleInformation = new StringBuilder();
-
             Console.ForegroundColor = ConsoleColor.DarkCyan;
+
             vehicleInformation.AppendFormat("Vehicle Information:\n");
             vehicleInformation.AppendFormat("=====================\n");
             Console.ForegroundColor = ConsoleColor.White;

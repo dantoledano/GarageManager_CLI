@@ -67,6 +67,7 @@ namespace Ex03.GarageLogic
 
             queriesList.Add("Are There Any Toxins The Truck Transport ? (Y/N) : ");
             queriesList.Add("Please Enter The Truck's Cargo Capacity: ");
+
             return queriesList;
         }
 
@@ -119,7 +120,6 @@ namespace Ex03.GarageLogic
                 exception = new FormatException("Format OF Truck Cargo Is Wrong. Enter Again: ");
                 exception.Source = "1";
             }
-
             else if(o_CargoCapacity < 0 || o_CargoCapacity > 9999999)// No maximum of cargo capacity were mentioned
             {
                 exception = new ValueOutOfRangeException(1, 9999999, "Out Of Range Cargo Capacity");

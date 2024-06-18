@@ -8,7 +8,6 @@ namespace Ex03.GarageLogic
 {
     public class ValueOutOfRangeException : Exception
     {
-        
             private float m_MinValue;
             private float m_MaxValue;
 
@@ -41,7 +40,7 @@ namespace Ex03.GarageLogic
             public ValueOutOfRangeException(float i_MinValue, float i_MaxValue, string i_MessageOfException,
                                             Exception i_Exception = null) : base(i_MessageOfException, i_Exception)
             {
-                m_MinValue = i_MaxValue;
+                m_MinValue = i_MinValue;
                 m_MaxValue = i_MaxValue;
             }
 

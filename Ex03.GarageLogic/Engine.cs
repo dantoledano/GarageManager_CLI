@@ -201,9 +201,9 @@ namespace Ex03.GarageLogic
                     string currentAmountOfBatteryAfterCharging = string.Format("Current Amount Of Battery: {0}", BatteryTimeLeft);
                     Console.WriteLine(currentAmountOfBatteryAfterCharging);
                 }
-                catch (ValueOutOfRangeException ex)
+                catch (ValueOutOfRangeException exception)
                 {
-                    string errorMessage = string.Format("Error: {0}", ex.Message);
+                    string errorMessage = string.Format("Error: {0}", exception.Message);
                     Console.WriteLine(errorMessage);
                     throw;
                 }

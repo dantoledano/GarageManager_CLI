@@ -31,11 +31,11 @@ namespace Ex03.ConsoleUI
             string title = "== Garage Menu ==";
             string border = new string('=', title.Length);
             Console.ForegroundColor = ConsoleColor.White;
+
             menu.AppendLine(border);
             menu.AppendLine(title);
             menu.AppendLine(border);
             Console.ForegroundColor = ConsoleColor.White; 
-
             menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Put Your Vehicle in The Garage."));
             menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Display All License Numbers of Vehicles in The Garage."));
             menu.AppendLine(string.Format("{0, -2} {1}", "3.", "Update The Status of a Vehicle In The Garage."));
@@ -81,7 +81,7 @@ namespace Ex03.ConsoleUI
             menu.AppendLine(border);
             menu.AppendLine(title);
             menu.AppendLine(border);
-            menu.AppendLine("Displaying License Numbers Using The Following Filter:\n");
+            menu.AppendLine("Displaying License Numbers Using The Following Filter:" + Environment.NewLine);
             menu.AppendLine(string.Format("{0, -2} {1}", "1.", "Filter by Current Status in The Garage."));
             menu.AppendLine(string.Format("{0, -2} {1}", "2.", "Don't Use Filtering."));
             menu.AppendLine(border);
@@ -151,11 +151,9 @@ namespace Ex03.ConsoleUI
                     inflateVehicleWheels(i_Garage);
                     break;
                 case 5:
-                    Console.WriteLine("Procedding To Fueling Station...\n");
                     powerUpVehicle(i_Garage, Engine.eEngineType.Fuel);
                     break;
                 case 6:
-                    Console.WriteLine("Procedding To Charging Station...\n");
                     powerUpVehicle(i_Garage, Engine.eEngineType.Battery);
                     break;
                 case 7:
@@ -195,7 +193,7 @@ namespace Ex03.ConsoleUI
         private void getVehicleStatusAndOwnerDetails(Garage i_Garage)
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine(" === Vehicle Is Being Added To The Garage === \n");
+            Console.WriteLine(" === Vehicle Is Being Added To The Garage === " + Environment.NewLine);
             Garage.VehicleStatusAndOwnerDetails vehicleStatusAndOwnerDetails = null;
             string licenseNumber = getVehicleLicenseNumberFromUser();
 
@@ -232,8 +230,6 @@ namespace Ex03.ConsoleUI
                 Console.WriteLine("Enter Which Octan You'd Like:");
                 displayFuelMenu();
                 o_FuelChoice = (int)getAndValidateInputFromUserInRange(1, 4);
-                
-
             }
 
             Console.WriteLine("Enter how much you'd like to add to you vehicle: ");
@@ -303,7 +299,7 @@ namespace Ex03.ConsoleUI
 
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("==== VEHICLE INFORMATION ENTRY ====\n");
+            Console.WriteLine("==== VEHICLE INFORMATION ENTRY ====" + Environment.NewLine);
             Console.WriteLine("Answer The Questions To Set The Vehicle Information");
             Console.WriteLine("----------------------------------------------------");
             Console.ForegroundColor = ConsoleColor.White;
@@ -376,7 +372,6 @@ namespace Ex03.ConsoleUI
                 }
             }
         }
-
 
         private void inflateVehicleWheels(Garage i_Garage)
         {

@@ -3,28 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|c:\\users\\dan toledano\\documents\\github\\garagemanagercli\\ex03.consoleui\\uimanagar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|solutionrelative:ex03.consoleui\\uimanagar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|c:\\users\\dan toledano\\documents\\github\\garagemanagercli\\ex03.consoleui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|solutionrelative:ex03.consoleui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|c:\\users\\dan toledano\\documents\\github\\garagemanagercli\\ex03.garagelogic\\garage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\garage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|c:\\users\\dan toledano\\documents\\github\\garagemanagercli\\ex03.garagelogic\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\ex03.garagelogic\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|c:\\users\\dan toledano\\documents\\github\\garagemanagercli\\ex03.garagelogic\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\ex03.garagelogic\\garage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\garage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|c:\\users\\dan toledano\\documents\\github\\garagemanagercli\\ex03.garagelogic\\truck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\truck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|c:\\users\\dan toledano\\documents\\github\\garagemanagercli\\ex03.garagelogic\\motorcycle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\motorcycle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|c:\\users\\dan toledano\\documents\\github\\garagemanagercli\\ex03.garagelogic\\valueoutofrangeexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\valueoutofrangeexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\ex03.consoleui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|solutionrelative:ex03.consoleui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\ex03.garagelogic\\vehicleallocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\vehicleallocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\ex03.garagelogic\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|c:\\users\\dan toledano\\documents\\github\\garagemanagercli\\ex03.garagelogic\\vehicleallocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\vehicleallocator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|c:\\users\\dan toledano\\documents\\github\\garagemanagercli\\ex03.garagelogic\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC93B07-145B-40E2-9D23-01CE2A023A54}|Ex03.GarageLogic\\Ex03.GarageLogic.csproj|solutionrelative:ex03.garagelogic\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|c:\\users\\dan toledano\\documents\\github\\garagemanagercli\\ex03.consoleui\\uimanagar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{859BAB9D-F3FF-48CC-B4BD-3B8C792A0FB9}|Ex03.ConsoleUI\\Ex03.ConsoleUI.csproj|solutionrelative:ex03.consoleui\\uimanagar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +50,136 @@
       "DocumentGroups": [
         {
           "DockedWidth": 174,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UIManagar.cs",
-              "DocumentMoniker": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.ConsoleUI\\UIManagar.cs",
-              "RelativeDocumentMoniker": "Ex03.ConsoleUI\\UIManagar.cs",
-              "ToolTip": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.ConsoleUI\\UIManagar.cs",
-              "RelativeToolTip": "Ex03.ConsoleUI\\UIManagar.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAM8BAABSAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T17:08:44.314Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Engine.cs",
-              "DocumentMoniker": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Engine.cs",
-              "RelativeDocumentMoniker": "Ex03.GarageLogic\\Engine.cs",
-              "ToolTip": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Engine.cs",
-              "RelativeToolTip": "Ex03.GarageLogic\\Engine.cs",
-              "ViewState": "AQIAAKQAAAAAAAAAAAAmwAAAAAAAAAAA",
+              "Title": "ValueOutOfRangeException.cs",
+              "DocumentMoniker": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\ValueOutOfRangeException.cs",
+              "RelativeDocumentMoniker": "Ex03.GarageLogic\\ValueOutOfRangeException.cs",
+              "ToolTip": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\ValueOutOfRangeException.cs",
+              "RelativeToolTip": "Ex03.GarageLogic\\ValueOutOfRangeException.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwCYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T17:04:14.851Z",
+              "WhenOpened": "2024-06-18T17:51:14.473Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Truck.cs",
+              "DocumentMoniker": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Truck.cs",
+              "RelativeDocumentMoniker": "Ex03.GarageLogic\\Truck.cs",
+              "ToolTip": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Truck.cs",
+              "RelativeToolTip": "Ex03.GarageLogic\\Truck.cs",
+              "ViewState": "AQIAAHYAAAAAAAAAAAAwwHkAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T17:49:35.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Motorcycle.cs",
+              "DocumentMoniker": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Motorcycle.cs",
+              "RelativeDocumentMoniker": "Ex03.GarageLogic\\Motorcycle.cs",
+              "ToolTip": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Motorcycle.cs",
+              "RelativeToolTip": "Ex03.GarageLogic\\Motorcycle.cs",
+              "ViewState": "AQIAAGsAAAAAAAAAAAAAwH4AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T17:47:49.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Garage.cs",
               "DocumentMoniker": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Garage.cs",
               "RelativeDocumentMoniker": "Ex03.GarageLogic\\Garage.cs",
               "ToolTip": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Garage.cs",
               "RelativeToolTip": "Ex03.GarageLogic\\Garage.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAkwFAAAAAJAAAA",
+              "ViewState": "AQIAANUAAAAAAAAAAAAuwOcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-18T17:04:13.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "VehicleAllocator.cs",
-              "DocumentMoniker": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\VehicleAllocator.cs",
-              "RelativeDocumentMoniker": "Ex03.GarageLogic\\VehicleAllocator.cs",
-              "ToolTip": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\VehicleAllocator.cs",
-              "RelativeToolTip": "Ex03.GarageLogic\\VehicleAllocator.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAYwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T17:04:06.524Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Vehicle.cs",
               "DocumentMoniker": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Vehicle.cs",
               "RelativeDocumentMoniker": "Ex03.GarageLogic\\Vehicle.cs",
               "ToolTip": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Vehicle.cs",
               "RelativeToolTip": "Ex03.GarageLogic\\Vehicle.cs",
-              "ViewState": "AQIAANgAAAAAAAAAAAAYwF4AAAAhAAAA",
+              "ViewState": "AQIAAOAAAAAAAAAAAAA3wOQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-18T17:03:31.731Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "VehicleAllocator.cs",
+              "DocumentMoniker": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\VehicleAllocator.cs",
+              "RelativeDocumentMoniker": "Ex03.GarageLogic\\VehicleAllocator.cs",
+              "ToolTip": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\VehicleAllocator.cs",
+              "RelativeToolTip": "Ex03.GarageLogic\\VehicleAllocator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T17:04:06.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.ConsoleUI\\Program.cs",
               "RelativeDocumentMoniker": "Ex03.ConsoleUI\\Program.cs",
               "ToolTip": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.ConsoleUI\\Program.cs",
               "RelativeToolTip": "Ex03.ConsoleUI\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-17T16:19:33.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Engine.cs",
+              "DocumentMoniker": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Engine.cs",
+              "RelativeDocumentMoniker": "Ex03.GarageLogic\\Engine.cs",
+              "ToolTip": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Engine.cs",
+              "RelativeToolTip": "Ex03.GarageLogic\\Engine.cs",
+              "ViewState": "AQIAANUAAAAAAAAAAAAuwMUAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T17:04:14.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Car.cs",
+              "DocumentMoniker": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Car.cs",
+              "RelativeDocumentMoniker": "Ex03.GarageLogic\\Car.cs",
+              "ToolTip": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.GarageLogic\\Car.cs",
+              "RelativeToolTip": "Ex03.GarageLogic\\Car.cs",
+              "ViewState": "AQIAAIUAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T17:43:49.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UIManagar.cs",
+              "DocumentMoniker": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.ConsoleUI\\UIManagar.cs",
+              "RelativeDocumentMoniker": "Ex03.ConsoleUI\\UIManagar.cs",
+              "ToolTip": "C:\\Users\\Dan Toledano\\Documents\\GitHub\\GarageManagerCLI\\Ex03.ConsoleUI\\UIManagar.cs",
+              "RelativeToolTip": "Ex03.ConsoleUI\\UIManagar.cs",
+              "ViewState": "AQIAALoBAAAAAAAAAAAiwFMAAABqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T17:08:44.314Z",
               "EditorCaption": ""
             }
           ]

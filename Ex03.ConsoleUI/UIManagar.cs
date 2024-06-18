@@ -71,7 +71,7 @@ namespace Ex03.ConsoleUI
             Console.ResetColor(); 
         }
 
-        private int showMenuOfOptionToFilterCarsInGarage() // CHANGE THE NAME OF THIS FUNCTION
+        private int showMenuOfOptionToFilterCarsInGarage() 
         {
             Console.Clear();
             StringBuilder menu = new StringBuilder();
@@ -181,8 +181,6 @@ namespace Ex03.ConsoleUI
                     string licenseNumber = this.getVehicleLicenseNumberFromUser();
                     Garage.VehicleStatusAndOwnerDetails userVehicle = i_Garage.GetVehicleByLicenceNumber(licenseNumber);
                     Console.WriteLine(userVehicle.ToString());
-                    //Console.WriteLine(userVehicle.OwnerVehicle.Wheels.ToString());
-                    //Console.WriteLine(userVehicle.OwnerVehicle.Engine.ToString());
                     displayBackToMenuOption();
                     userChoice = 2;
                 }

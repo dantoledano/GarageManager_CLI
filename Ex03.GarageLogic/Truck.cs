@@ -12,9 +12,8 @@ namespace Ex03.GarageLogic
     {
         private const int k_TruckNumberOfWheels = 16;
         private const float k_TruckMaxWheelAirPressure = 28;
-        private const char k_DefaultHasToxinsChar = ' ';// names are not good - meaning is wrong
+        private const char k_HasToxinsAsChar = ' ';
         private const int k_DefaultCargoInitilize = -1;
-
         private bool m_IsTransportingToxins;
         private float m_CargoCapacity;
 
@@ -100,7 +99,7 @@ namespace Ex03.GarageLogic
         private Exception checkForThrownExceptionsInResponses(List<string> i_QueriesResponses, out char o_TruckHasToxins, out int o_CargoCapacity)
         {
             Exception exception = null;
-            o_TruckHasToxins = k_DefaultHasToxinsChar;
+            o_TruckHasToxins = k_HasToxinsAsChar;
             o_CargoCapacity = k_DefaultCargoInitilize;
             o_TruckHasToxins = Char.ToUpper(o_TruckHasToxins);
 

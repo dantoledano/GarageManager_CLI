@@ -86,7 +86,6 @@ namespace Ex03.GarageLogic
             return queriesList;
         }
 
-
         public override void SetResponsesForVehicleQueries(List<string> i_QueriesResponses)
         {
             Exception exception = checkForThrownExceptionsInResponses(i_QueriesResponses, out int o_LicenseType, out int o_EngineCapacity);

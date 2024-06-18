@@ -100,18 +100,6 @@ namespace Ex03.GarageLogic
             }
         }
 
-        //public void SetPowerPercentageLeft()
-        //{
-        //    if(this.Engine is Engine.FuelBasedEngine)
-        //    {
-        //        this.PercentagePowerLeft = ((this.Engine as Engine.FuelBasedEngine).FuelLeft / (this.Engine as Engine.FuelBasedEngine).MaxAmountOfFuel) *100f;
-        //    }
-        //    else
-        //    {
-        //        this.PercentagePowerLeft = ((this.Engine as Engine.ElectricBasedEngine).BatteryTimeLeft / (this.Engine as Engine.ElectricBasedEngine).BatteryCapacity) * 100f;
-        //    }
-        //}
-
         public void SetPowerPercentageLeft()
         {
             if (Engine is Engine.FuelBasedEngine fuelEngine)

@@ -11,8 +11,8 @@ namespace Ex03.GarageLogic
         
             private float m_MinValue;
             private float m_MaxValue;
-            /* BEGIN - Getters & Setters */
 
+            /* BEGIN - Getters & Setters */
             public float MinValue
             {
                 get

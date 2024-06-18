@@ -251,6 +251,7 @@ namespace Ex03.GarageLogic
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             vehicleInformation.AppendFormat("Engine Information:\n");
             vehicleInformation.AppendFormat("==================\n");
+            vehicleInformation.AppendFormat("Power Percentage: {0:F1}%\n",PercentagePowerLeft);
             Console.ForegroundColor = ConsoleColor.White;
             vehicleInformation.AppendFormat("{0}\n", Engine.ToString());
 
